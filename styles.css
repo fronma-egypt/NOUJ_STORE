@@ -560,3 +560,27 @@ body {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
+@media (max-width: 768px) {
+  .checkout-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .checkout-form, .invoice-box {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input, select, button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  table th, table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
