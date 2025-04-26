@@ -617,3 +617,88 @@ body {
     padding: 8px;
   }
 }
+/* 📱 تحسين استجابة الموبايل */
+@media (max-width: 768px) {
+  /* الشريط العلوي */
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    background: #5000c0;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
+
+  .navbar ul li a {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  /* الصور */
+  .main-image img,
+  .hero-image {
+    width: 90%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* المنتجات */
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* CTA - النصوص */
+  .cta {
+    text-align: center;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  .cta h2 {
+    font-size: 22px;
+  }
+
+  /* الفاتورة - checkout */
+  .checkout-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .checkout-form, .invoice-box {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  table th, table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* تحسين البانر */
+  .welcome-banner {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
