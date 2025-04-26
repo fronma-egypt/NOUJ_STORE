@@ -568,6 +568,39 @@ body {
 
   .checkout-form, .invoice-box {
     width: 100%;
+    margin: 0 auto;
+  }
+
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .welcome-banner {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .main-image img, .hero-image {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .cta {
+    max-width: 100%;
+    text-align: center;
   }
 
   h2 {
@@ -575,7 +608,7 @@ body {
   }
 
   input, select, button {
-    font-size: 15px;
+    font-size: 16px;
     padding: 10px;
   }
 
