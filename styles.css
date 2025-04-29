@@ -858,5 +858,5 @@ body {
   padding: 15px 20px;
 }
 .navbar {
-  margin-top: 20px; /* جرّب من -5px إلى -10px حسب ما تحب */
+  margin-top: -10px; /* جرّب من -5px إلى -10px حسب ما تحب */
 }
