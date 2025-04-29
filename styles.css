@@ -811,7 +811,6 @@ body {
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* ✅ مناسب لجميع الشاشات */
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
@@ -835,7 +834,7 @@ body {
 .navbar ul {
   display: flex;
   flex-direction: row; /* ✅ مهم عشان تبقى بالعرض */
-  gap: `10px;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -854,9 +853,42 @@ body {
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* ✅ يخلي العناوين واللوجو في نفس المستوى رأسيًا */
-  padding: 15px 20px;
+  align-items: center;
+  padding: 10px 20px;
+  height: 70px;
+  background: #5000c0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
+
 .navbar {
-  margin-top: -10px; /* جرّب من -5px إلى -10px حسب ما تحب */
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  position: relative;
+  padding: 10px 5px; /* ✅ يرفع الرابط نفسه بدون ما يؤثر على المحاذاة */
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
 }
