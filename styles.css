@@ -766,7 +766,6 @@ footer {
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 1000px;
@@ -774,7 +773,6 @@ footer {
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
@@ -860,5 +858,5 @@ body {
   padding: 15px 20px;
 }
 .navbar {
-  margin-top: -10px; /* جرّب من -5px إلى -10px حسب ما تحب */
+  margin-top: -20px; /* جرّب من -5px إلى -10px حسب ما تحب */
 }
