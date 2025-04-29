@@ -832,8 +832,24 @@ body {
   transform: scale(1.05);
 }
 
-.product img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+
+
+.navbar ul {
+  display: flex;
+  flex-direction: row; /* ✅ مهم عشان تبقى بالعرض */
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
