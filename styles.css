@@ -853,3 +853,12 @@ body {
   align-items: center;
   gap: 20px;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* ✅ يخلي العناوين واللوجو في نفس المستوى رأسيًا */
+  padding: 15px 20px;
+}
+.navbar {
+  margin-top: -5px; /* جرّب من -5px إلى -10px حسب ما تحب */
+}
