@@ -798,7 +798,7 @@ body {
 }
 .products-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ثلاث منتجات في الصف */
+  grid-template-columns: repeat(1, 1fr); /* ثلاث منتجات في الصف */
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
