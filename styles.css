@@ -825,9 +825,6 @@ body {
 .product:hover {
   transform: scale(1.05);
 }
-
-
-
 .navbar ul {
   display: flex;
   flex-direction: row; /* ✅ مهم عشان تبقى بالعرض */
@@ -858,17 +855,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(to bottom, #d3cce3, #e9e4f0);
-  color: #6200ea;
-  line-height: 1.6;
-  padding: 20px;
-  padding-top: 100px;
-  direction: rtl;
-  animation: fadeIn 1s ease-in;
-}
-
 /* ========== انيميشن ========== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
@@ -879,22 +865,6 @@ body {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
-}
-
-/* ========== الهيدر ========== */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: #5000c0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
 }
 
 /* ========== اللوجو ========== */
@@ -943,18 +913,6 @@ body {
 
 .navbar ul li a:hover::after {
   width: 100%;
-}
-
-/* ========== البانر ========== */
-.welcome-banner {
-  text-align: center;
-  margin: 100px auto 40px;
-  padding: 30px;
-  background: linear-gradient(135deg, #ff9f00, #FFD700);
-  color: #000;
-  border-radius: 12px;
-  font-size: 24px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
 /* ========== المنتجات ========== */
@@ -1028,15 +986,6 @@ body {
   left: 100%;
 }
 
-/* ========== الفوتر ========== */
-footer {
-  background: #6200ea;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
-
 /* ========== استجابة الموبايل ========== */
 @media (max-width: 768px) {
   .products-container {
@@ -1049,8 +998,3 @@ footer {
   .product {
     width: 100%;
   }
-
-  .main-image img {
-    width: 100%;
-  }
-}
