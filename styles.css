@@ -728,6 +728,23 @@ footer {
   .products-container {
     gap: 10px;
   }
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(1, 1fr); /* موبايل: منتج واحد في الصف */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr); /* تابلت: منتجين في الصف */
+  }
+}
+
+@media (min-width: 1025px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr); /* كمبيوتر: 3 منتجات */
+  }
+}
 
   .header {
     flex-direction: column;
@@ -764,20 +781,7 @@ footer {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-.products-container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-.products-container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 120px auto 50px; /* المسافة من فوق عشان الهيدر */
-}
+
 .product {
   background: #fff;
   padding: 20px;
@@ -808,14 +812,6 @@ body {
 }
 body {
   padding-top: 100px; /* ✅ تعويض للهيدر */
-}
-.products-container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .product {
   background: #ffffff;
