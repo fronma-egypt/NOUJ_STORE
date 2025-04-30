@@ -880,41 +880,6 @@ html {
   transform: scale(1.05);
 }
 
-/* ========== النافبار ========== */
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.navbar ul li a {
-  color: #fff;
-  font-size: 18px;
-  text-decoration: none;
-  position: relative;
-  transition: 0.3s;
-}
-
-.navbar ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  height: 2px;
-  width: 0;
-  background-color: #FFD700;
-  transition: width 0.3s;
-}
-
-.navbar ul li a:hover::after {
-  width: 100%;
-}
-
 /* ========== المنتجات ========== */
 .products-container {
   display: grid;
