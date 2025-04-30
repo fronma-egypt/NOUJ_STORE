@@ -835,17 +835,17 @@ body {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* الوضع الطبيعي للابتوب */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .products-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* تابلت */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .products-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* موبايل */
   }
 }
