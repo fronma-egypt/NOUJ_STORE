@@ -815,6 +815,7 @@ body {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .product {
   background: #ffffff;
