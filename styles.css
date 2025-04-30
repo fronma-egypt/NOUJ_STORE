@@ -724,11 +724,11 @@ footer {
 }
 
 /* ========== استجابة الموبايل ========== */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .products-container {
     gap: 10px;
   }
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .products-container {
     grid-template-columns: repeat(2,2fr); /* موبايل: منتج واحد في الصف */
   }
@@ -736,7 +736,7 @@ footer {
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .products-container {
-    grid-template-columns: repeat(2, 1fr); /* تابلت: منتجين في الصف */
+    grid-template-columns: repeat(2, 2fr); /* تابلت: منتجين في الصف */
   }
 }
 
