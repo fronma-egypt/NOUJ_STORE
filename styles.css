@@ -807,7 +807,7 @@ body {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 body {
-  padding-top: 90px; /* ✅ تعويض للهيدر */
+  padding-top: 100px; /* ✅ تعويض للهيدر */
 }
 .products-container {
   display: grid;
