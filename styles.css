@@ -829,19 +829,3 @@ body {
   display: flex;
   align-items: center;
 }
-.products-container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr); /* الوضع الطبيعي للابتوب */
-}
-  .products-container {
-    grid-template-columns: repeat(2, 1fr); /* تابلت */
-  }
-}
-  .products-container {
-    grid-template-columns: 1fr; /* موبايل */
-  }
-}
