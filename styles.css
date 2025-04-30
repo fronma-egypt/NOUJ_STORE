@@ -837,14 +837,10 @@ body {
   margin: 0 auto;
   grid-template-columns: repeat(3, 1fr); /* الوضع الطبيعي للابتوب */
 }
-
-@media (max-width: 1024px) {
   .products-container {
     grid-template-columns: repeat(2, 1fr); /* تابلت */
   }
 }
-
-@media (max-width: 600px) {
   .products-container {
     grid-template-columns: 1fr; /* موبايل */
   }
