@@ -756,21 +756,6 @@ footer {
   .main-image img {
     width: 20%;
   }
-
-  .mobile-only .products-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mobile only container */
-.mobile-only {
-  display: block;
-}
-
-@media (min-width: 769px) {
-  .mobile-only {
-    display: none !important;
-  }
 }
 
 /* ========== انيميشن إضافي ========== */
