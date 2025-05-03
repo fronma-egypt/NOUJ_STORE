@@ -756,6 +756,10 @@ footer {
   .main-image img {
     width: 20%;
   }
+
+  .mobile-only .products-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile only container */
