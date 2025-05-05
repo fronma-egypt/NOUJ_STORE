@@ -114,7 +114,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 }
 
 .product {
@@ -396,7 +395,6 @@ body {
 .products-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   padding: 20px;
 }
 
@@ -459,13 +457,11 @@ body {
 .products-container {
   display: flex;
   grid-template-columns: repeat(3, 1fr); /* ثلاث منتجات في الصف */
-  gap: 20px;
   flex-wrap: wrap;
   align-items: start;
   padding: 10px 10px;
   max-width: 1000px;
   text-align: center;
-  
 }
 
 .toast {
@@ -671,7 +667,6 @@ body {
 .products-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: auto;
@@ -726,7 +721,7 @@ footer {
 /* ========== استجابة الموبايل ========== */
 @media (max-width: 768px) {
   .products-container {
-    gap: 10px;
+    gap: 0;
   }
 
   .header {
@@ -766,14 +761,12 @@ footer {
 }
 .products-container {
   display: grid;
-  gap: 20px;
   padding: 20px;
   max-width: 1000px;
   margin: auto;
 }
 .products-container {
   display: grid;
-  gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: 120px auto 50px; /* المسافة من فوق عشان الهيدر */
@@ -811,7 +804,6 @@ body {
 }
 .products-container {
   display: grid;
-  gap: 20px;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
