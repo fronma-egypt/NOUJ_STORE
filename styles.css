@@ -722,7 +722,7 @@ footer {
 /* ========== استجابة الموبايل ========== */
 @media (max-width: 768px) {
   .products-container {
-    gap: 0;
+    gap: 10px;
   }
 
   .header {
