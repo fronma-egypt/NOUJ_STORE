@@ -113,7 +113,7 @@ body {
   .products-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* المسافة بين المنتجات */
+  gap: 30px; /* المسافة بين المنتجات */
   justify-content: center;
 }
 
