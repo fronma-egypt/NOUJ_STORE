@@ -1,6 +1,4 @@
-/* ========== إعادة تعيين عامة ========== */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -19,21 +17,6 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-
-/* ========== شريط التنقل ========== */
-.header {
-  background: #2d006d(0, 0, 0, 0.8);
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0px 4px 6px rgb(131, 0, 0);
-}
-
 .logo {
   font-size: 24px;
   color: #FFD700;
@@ -605,14 +588,6 @@ body {
 
 /* ========== الهيدر ========== */
 .header {
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
   box-shadow: 0px 4px 6px rgb(87, 0, 0);
 }
 
@@ -783,9 +758,6 @@ footer {
 body {
   padding-top: 80px; /* عشان الهيدر ميتغطاش على المحتوى */
 }
-.products-page {
-  margin-top: 100px; /* بدل 200 اللي كانت مبالغ فيها */
-}
 .header {
   position: fixed;
   top: 0;
@@ -794,14 +766,11 @@ body {
   height: 80px; /* ✅ قلل الارتفاع */
   background: #5000c0;
   z-index: 1000;
-  display: flex;
+  display: ل;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
-body {
-  padding-top: 100px; /* ✅ تعويض للهيدر */
+  /* padding: 0 20px; */
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); */
 }
 .products-container {
   display: grid;
@@ -842,4 +811,36 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 20px;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.product {
+  flex: 1 1 calc(30% - 10px); /* يعرض عنصرين في الصف على الموبايل */
+  max-width: 160px;
+  box-sizing: border-box;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .product {
+    flex: 1 1 calc(30% - 5px); /* 3 عناصر في الصف */
+  }
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
