@@ -266,7 +266,6 @@ h2 {
 .item-info {
   display: flex;
   align-items: center;
-  gap: 15px;
 }
 
 .item-thumb {
