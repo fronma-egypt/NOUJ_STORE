@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن - متجر الشاي الفاخر</title>
@@ -96,12 +94,13 @@
     </header>
 
     <section class="about-section">
-<section class="about-section" style="
-    padding-right: 20px;
-    padding-left: 20px;
+        <h2 style="
+    margin-top: 60px;
+    margin-bottom: 0px;
+">من نحن؟</h2>
+        <div class="timeline" style="
+    margin-top: 0px;
 ">
-        <h2>من نحن؟</h2>
-        <div class="timeline">
             <div class="timeline-item">
                 <strong>تاريخنا:</strong> شركة فرونما اجيبت تأسست عام 2001 من قبل المحاسب . عبده الشيشينى ومجموعة واعدة وطموحة من الشباب و شابات المصممين على النجاح رغم التحديات الصعبة . واصبحوا نموزج جيد يحتيزى به بعد تحول افكرهم الى حقيقة ملموسة فى صورة منتجات جديد ووحيدة فى العالم كلة وذلك بشهادة بعض المنظمات العالمية وكانت بداية الشركة مثل العديد من المؤسسات والشركات النشأة التي تعانى من مصاريف
             </div>
@@ -120,9 +119,49 @@
             </div>
         </div>
     </section>
+
     <footer>
         <p>جميع الحقوق محفوظة © 2025 - متجر الشاي الفاخر</p>
     </footer>
 
-</body>
-</html>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
