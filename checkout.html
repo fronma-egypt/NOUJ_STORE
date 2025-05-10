@@ -14,10 +14,11 @@
 
     .checkout-wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   max-width: 1200px;
   margin: auto;
-  gap: 20px;
-  flex-direction: column;
+  gap: 30px;
 }
 
 .checkout-form {
@@ -86,48 +87,83 @@
   </style>
 </head>
 <body style="
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-  padding-top: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 ">
 
-  
-
 <div class="checkout-wrapper">
-<!-- فورم الدفع -->
-<div class="checkout-container">
-  <h2 style="
-  margin-top: 8px;
-  margin-bottom: 0px;
-">تأكيد الطلب والدفع</h2>
+  <!-- فورم الدفع -->
+  <div class="checkout-container">
+    <h2>تأكيد الطلب والدفع</h2>
 
-  <form id="checkout-form">
-    <input type="text" name="name" placeholder="اسمك" required="">
-    <input type="email" name="email" placeholder="البريد الإلكتروني" required="">
-    <input type="text" name="phone" placeholder="رقم الهاتف" required="">
-    <input type="text" name="address" placeholder="العنوان بالتفصيل" required="">
+    <form id="checkout-form">
+      <input type="text" name="name" placeholder="اسمك" required="">
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required="">
+      <input type="text" name="phone" placeholder="رقم الهاتف" required="">
+      <input type="text" name="address" placeholder="العنوان بالتفصيل" required="">
 
-    <label for="payment-method">اختر وسيلة الدفع:</label>
-    <select name="payment-method" id="payment-method" required="">
-      <option value="5021619">💳 بطاقة ائتمان</option>
-      <option value="cod">💵 الدفع عند الاستلام</option>
-    </select>
+      <label for="payment-method">اختر وسيلة الدفع:</label>
+      <select name="payment-method" id="payment-method" required="">
+        <option value="5021619">💳 بطاقة ائتمان</option>
+        <option value="cod">💵 الدفع عند الاستلام</option>
+      </select>
 
-   
-  </form>
-</div>
+      <button type="submit" style="
+    margin-top: 10px;
+">أتمام الطلب ✅</button>
+    </form>
+  </div>
 
   <script src="paymob.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 
 
 
 
   
   <div class="invoice-box" style="
+    /* padding-right: 10px; */
     padding-top: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     padding-bottom: 10px;
 ">
     <h2>🧾 الفاتورة</h2>
@@ -141,15 +177,20 @@
           <td> عبوة شاي دودز 6 مشروب 1 معلقة سكر</td>
           <td>1</td>
           <td>26.00 ج</td>
+        </tr>
+        <tr>
+          <td>عبوة شاي دودز 6 مشروب 2 معلقة سكر</td>
+          <td>1</td>
+          <td>26.00 ج</td>
         </tr></tbody>
       </table>
       <div class="summary">
-        <p>💵 المبلغ: 26.00 ج</p>
-        <p>🎁 بعد الخصم: 2.60 ج</p>
+        <p>💵 المبلغ: 52.00 ج</p>
+        <p>🎁 بعد الخصم: 5.20 ج</p>
         <p>🧾 ضريبة القيمة المضافة: 0.00 ج</p>
 <p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
         <hr>
-        <p>💰 الإجمالي: 23.40 ج</p>
+        <p>💰 الإجمالي: 46.80 ج</p>
       </div>
     </div>
   </div>
@@ -199,7 +240,6 @@
         <p>💵 المبلغ: ${subtotal.toFixed(2)} ج</p>
         <p>🎁 بعد الخصم: ${discount.toFixed(2)} ج</p>
         <p>🧾 ضريبة القيمة المضافة: ${vat.toFixed(2)} ج</p>
-        <p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
         <hr>
         <p>💰 الإجمالي: ${total.toFixed(2)} ج</p>
       </div>
@@ -222,13 +262,8 @@
   });
 </script>
 <button class="print-btn" onclick="window.print()" style="
-    border-bottom-width: 10px;
-    margin-bottom: 10px;
     margin-top: 10px;
 ">🖨️ طباعة الفاتورة</button>
-<button type="submit" style="
-margin-top: 0px;
-">أتمام الطلب ✅</button>
 
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -307,44 +342,4 @@ margin-top: 0px;
   
 </script>
 <script src="paymob.js"></script>
-
-
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</body></html>
+<!-- Code injected--></body></html>
