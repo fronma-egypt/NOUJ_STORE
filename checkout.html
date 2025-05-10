@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<html lang="ar" dir="rtl"><head>
   
   <meta charset="UTF-8">
   <title>الدفع - متجر نوج</title>
@@ -16,11 +14,10 @@
 
     .checkout-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   max-width: 1200px;
   margin: auto;
-  gap: 30px;
+  gap: 20px;
+  flex-direction: column;
 }
 
 .checkout-form {
@@ -88,14 +85,14 @@
     }
   </style>
 </head>
-<body>
-
-  <body style="
+<body style="
   padding-right: 0px;
   padding-left: 0px;
   padding-bottom: 0px;
   padding-top: 0px;
 ">
+
+  
 
 <div class="checkout-wrapper">
 <!-- فورم الدفع -->
@@ -122,14 +119,39 @@
 </div>
 
   <script src="paymob.js"></script>
-</body>
-</html>
 
 
-  <!-- الفاتورة -->
-  <div class="invoice-box">
+
+
+  
+  <div class="invoice-box" style="
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+">
     <h2>🧾 الفاتورة</h2>
-    <div id="invoice"></div>
+    <div id="invoice">
+      <table>
+        <thead>
+          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td> عبوة شاي دودز 6 مشروب 1 معلقة سكر</td>
+          <td>1</td>
+          <td>26.00 ج</td>
+        </tr></tbody>
+      </table>
+      <div class="summary">
+        <p>💵 المبلغ: 26.00 ج</p>
+        <p>🎁 بعد الخصم: 2.60 ج</p>
+        <p>🧾 ضريبة القيمة المضافة: 0.00 ج</p>
+<p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
+        <hr>
+        <p>💰 الإجمالي: 23.40 ج</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -177,6 +199,7 @@
         <p>💵 المبلغ: ${subtotal.toFixed(2)} ج</p>
         <p>🎁 بعد الخصم: ${discount.toFixed(2)} ج</p>
         <p>🧾 ضريبة القيمة المضافة: ${vat.toFixed(2)} ج</p>
+        <p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
         <hr>
         <p>💰 الإجمالي: ${total.toFixed(2)} ج</p>
       </div>
@@ -198,11 +221,15 @@
     localStorage.setItem("orderData", JSON.stringify(orderData));
   });
 </script>
-<button class="print-btn" onclick="window.print()">🖨️ طباعة الفاتورة</button>
+<button class="print-btn" onclick="window.print()" style="
+    border-bottom-width: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+">🖨️ طباعة الفاتورة</button>
 <button type="submit" style="
 margin-top: 0px;
 ">أتمام الطلب ✅</button>
-</div>
+
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
@@ -280,5 +307,44 @@ margin-top: 0px;
   
 </script>
 <script src="paymob.js"></script>
-</body>
-</html>
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
