@@ -1,8 +1,6 @@
 <html lang="ar" dir="rtl"><head>
-  
   <meta charset="UTF-8">
   <title>الدفع - متجر نوج</title>
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -13,36 +11,29 @@
     }
 
     .checkout-wrapper {
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: auto;
-  gap: 30px;
-}
+      justify-content: space-between;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: auto;
+      gap: 30px;
+    }
 
-.checkout-form {
-  flex: 0 0 55%;
-  min-width: 300px;
-}
-
-.invoice-box {
-  flex: 0 0 40%;
-  min-width: 300px;
-}
-
-    .checkout-form, .invoice-box {
+    .checkout-form {
+      flex: 0 0 55%;
+      min-width: 300px;
       background: white;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.08);
     }
 
-    .checkout-form {
-      flex: 1 1 55%;
-    }
-
     .invoice-box {
-      flex: 1 1 40%;
+      flex: 0 0 40%;
+      min-width: 300px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
     }
 
     input, select {
@@ -83,39 +74,341 @@
       margin: 6px 0;
       font-weight: 600;
     }
+
+    .print-btn {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body style="
-    padding-left: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
     padding-top: 10px;
-    padding-right: 10px;
     padding-bottom: 10px;
 ">
 
 <div class="checkout-wrapper">
   <!-- فورم الدفع -->
-  <div class="checkout-container">
+  <div class="checkout-form" style="
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+">
     <h2>تأكيد الطلب والدفع</h2>
-
     <form id="checkout-form">
       <input type="text" name="name" placeholder="اسمك" required="">
       <input type="email" name="email" placeholder="البريد الإلكتروني" required="">
       <input type="text" name="phone" placeholder="رقم الهاتف" required="">
       <input type="text" name="address" placeholder="العنوان بالتفصيل" required="">
-
+      
+      <label for="locationSelect">اختر منطقتك:</label>
+      <select id="locationSelect">
+        <option value="">-- اختر --</option>
+<option value="30.0444,31.2357">الدقي</option>
+<option value="30.0566,31.2394">وسط البلد</option>
+<option value="30.0609,31.2197">الزمالك</option>
+<option value="29.9650,31.2750">ش ابو بريك</option>
+<option value="29.9680,31.2720">ش النصر</option>
+<option value="29.9700,31.2730">منطقة عمارة البرج</option>
+<option value="29.9720,31.2760">ش اللاسيلكى</option>
+<option value="29.9730,31.2770">منطقة عمارات اللاسيلكى</option>
+<option value="29.9740,31.2780">مشتشفى تبارك</option>
+<option value="29.9750,31.2790">ش البحث الجنائى</option>
+<option value="29.9760,31.2800">ش المطعم السورى</option>
+<option value="29.9770,31.2810">ميدان صقر قريش</option>
+<option value="29.9780,31.2820">منطقة الميكانيكة</option>
+<option value="29.9790,31.2830">ش مركز شباب البساتين</option>
+<option value="29.9800,31.2840">منطقة عماراة الالنيابة</option>
+<option value="29.9810,31.2850">ش مستشفى اليوم الواحد</option>
+<option value="29.9820,31.2860">م الجزائر</option>
+<option value="29.9830,31.2870">ش نور الدين</option>
+<option value="29.9840,31.2880">ش عبد المنعم رياض</option>
+<option value="29.9850,31.2890">ميدان فونتانا</option>
+<option value="29.9860,31.2900">جراند مول</option>
+<option value="29.9870,31.2910">منطقة فكتوريا</option>
+<option value="30.0300,31.2200">منطقة دجلة</option>
+<option value="29.9890,31.2930">ش 233</option>
+<option value="29.9900,31.2940">نيركو</option>
+<option value="29.9910,31.2950">ش الزهراء</option>
+<option value="29.9920,31.2960">المجمع التجارى</option>
+<option value="29.9930,31.2970">ش ال 50 امامى وخلفى</option>
+<option value="29.9940,31.2980">منطقة خلف ش 90</option>
+<option value="29.9950,31.2990">منطقة بيتشو</option>
+<option value="29.9960,31.3000">ش التجارى تبارك</option>
+<option value="29.9970,31.3010">ش السعادة</option>
+<option value="29.9980,31.3020">ش كارفور</option>
+<option value="29.9990,31.3030">منطقة المعراج العلوى والسفلى</option>
+<option value="30.0000,31.3040">ش على عبد العزيز</option>
+<option value="30.0010,31.3050">ميدان ابو عبدة</option>
+<option value="30.0020,31.3060">ارض البصرى</option>
+<option value="30.0030,31.3070">ش احمد زكى</option>
+<option value="30.0040,31.3080">ش حسنين دسوقى</option>
+<option value="30.0050,31.3090">ش 9 ب</option>
+<option value="30.0060,31.3100">ش 9</option>
+<option value="29.9600,31.2500">ثكنات المعادى</option>
+<option value="29.9610,31.2510">ميدان الحرية</option>
+<option value="29.9620,31.2520">ش 105 ميدان الاتحاد</option>
+<option value="29.9630,31.2530">ش 77 جامع العرب</option>
+<option value="29.9640,31.2540">ش الملاعب</option>
+<option value="29.9650,31.2550">ش عزبة الورد</option>
+<option value="29.9660,31.2560">ش البساتين</option>
+<option value="29.9670,31.2570">شركة الكهرباء</option>
+<option value="29.9680,31.2580">سوق مزرعة البط</option>
+<option value="29.9690,31.2590">ش مزرعة البط</option>
+<option value="29.9700,31.2600">ش الملف</option>
+<option value="29.9710,31.2610">ش سوق دار السلام</option>
+<option value="29.9720,31.2620">الطريق الزراعى</option>
+<option value="29.9730,31.2630">موقف المطبعة</option>
+<option value="29.9740,31.2640">اكادمية السادات</option>
+<option value="29.9750,31.2650">م عمارة حسين صدقى</option>
+<option value="29.9760,31.2660">مستشفى الفاروق</option>
+<option value="29.9770,31.2670">مبرة المعادى</option>
+<option value="29.9780,31.2680">ش 7</option>
+<option value="30.0286,31.3273">المقطم</option>
+<option value="30.0511,31.3656">مدينة نصر</option>
+<option value="30.0059,31.2290">مصر القديمه</option>
+<option value="30.0286,31.2267">المنيل</option>
+<option value="29.9000,31.3000">المعصرة</option>
+      </select>
+      
       <label for="payment-method">اختر وسيلة الدفع:</label>
       <select name="payment-method" id="payment-method" required="">
         <option value="5021619">💳 بطاقة ائتمان</option>
         <option value="cod">💵 الدفع عند الاستلام</option>
       </select>
-
-      <button type="submit" style="
-    margin-top: 10px;
-">أتمام الطلب ✅</button>
+      <button type="submit">أتمام الطلب ✅</button>
     </form>
   </div>
 
-  <script src="paymob.js"></script>
+  <!-- الفاتورة -->
+  <div class="invoice-box" style="
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+">
+    <h2>🧾 الفاتورة</h2>
+    <div id="invoice">
+      <table>
+        <thead>
+          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td> عبوة شاي دودز 6 مشروب 1 معلقة سكر</td>
+          <td>1</td>
+          <td>26.00 ج</td>
+        </tr>
+        <tr>
+          <td>عبوة شاي دودز 6 مشروب 2 معلقة سكر</td>
+          <td>1</td>
+          <td>26.00 ج</td>
+        </tr></tbody>
+      </table>
+      <div class="summary">
+        <p>💵 المبلغ: 52.00 ج</p>
+        <p>🎁 الخصم (10%): 5.20 ج</p>
+        <p>🧾 ضريبة القيمة المضافة (0%): 0.00 ج</p>
+        <p>🚚 تكلفة الشحن (1.65 كم): 12.60 ج</p>
+        <hr>
+        <p>💰 الإجمالي: 59.40 ج</p>
+      </div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ طباعة الفاتورة</button>
+  </div>
+</div>
+
+<!-- تضمين المكتبات الخارجية -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="paymob.js"></script>
+
+<!-- سكريبت الصفحة -->
+<script>
+  // تهيئة خدمة البريد الإلكتروني
+  emailjs.init("UPtxd1MC2SrpDzWal");
+
+  // ثوابت الحساب
+  const vatRate = 0.0;
+  const discountRate = 0.1;
+  const storeCoords = [29.97325, 31.26739]; // موقع المتجر
+
+  // استرجاع بيانات السلة - إضافة بيانات اختبارية إذا كانت السلة فارغة
+  let cart = JSON.parse(localStorage.getItem("cart")) || {};
+  
+  // للاختبار: إذا كانت السلة فارغة، أضف بعض المنتجات للعرض
+  if (Object.keys(cart).length === 0) {
+    console.log("السلة فارغة، إضافة بيانات اختبارية");
+    cart = {
+      "1": { id: "1", name: "منتج تجريبي 1", price: 100, quantity: 2 },
+      "2": { id: "2", name: "منتج تجريبي 2", price: 150, quantity: 1 }
+    };
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  // دالة حساب تكلفة الشحن
+  function calculateShippingCost(km) {
+    if (km <= 1) return 10;
+    return 10 + (km - 1) * 4;
+  }
+
+  // دالة حساب المسافة بين نقطتين (إحداثيات GPS) بالكيلومتر
+  function haversineDistance(coords1, coords2) {
+    if (!coords1 || !coords2 || coords1.length !== 2 || coords2.length !== 2) {
+      return 0;
+    }
+    
+    const [lat1, lon1] = coords1;
+    const [lat2, lon2] = coords2;
+    
+    const toRad = angle => angle * Math.PI / 180;
+    const R = 6371; // نصف قطر الأرض بالكيلومتر
+
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) ** 2;
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  // دالة عرض الفاتورة
+  function renderInvoice() {
+    const invoiceEl = document.getElementById("invoice");
+    
+    if (!invoiceEl) {
+      console.error("لم يتم العثور على عنصر الفاتورة!");
+      return;
+    }
+    
+    if (Object.keys(cart).length === 0) {
+      invoiceEl.innerHTML = "<p>السلة فارغة.</p>";
+      return;
+    }
+
+    let subtotal = 0;
+    let rows = "";
+
+    for (let id in cart) {
+      const item = cart[id];
+      const totalItem = item.quantity * item.price;
+      subtotal += totalItem;
+
+      rows += `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>${totalItem.toFixed(2)} ج</td>
+        </tr>`;
+    }
+
+    const discount = subtotal * discountRate;
+    const vat = (subtotal - discount) * vatRate;
+
+    // احسب الشحن من قيمة محفوظة في localStorage
+    const distance = parseFloat(localStorage.getItem("distance_km") || "0");
+    const shippingCost = calculateShippingCost(distance);
+
+    const total = subtotal - discount + vat + shippingCost;
+    localStorage.setItem("checkoutTotal", total.toFixed(2));
+
+    invoiceEl.innerHTML = `
+      <table>
+        <thead>
+          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div class="summary">
+        <p>💵 المبلغ: ${subtotal.toFixed(2)} ج</p>
+        <p>🎁 الخصم (${discountRate * 100}%): ${discount.toFixed(2)} ج</p>
+        <p>🧾 ضريبة القيمة المضافة (${vatRate * 100}%): ${vat.toFixed(2)} ج</p>
+        <p>🚚 تكلفة الشحن (${distance} كم): ${shippingCost.toFixed(2)} ج</p>
+        <hr>
+        <p>💰 الإجمالي: ${total.toFixed(2)} ج</p>
+      </div>
+    `;
+  }
+
+  // استمع لتغييرات في اختيار الموقع
+  document.getElementById("locationSelect").addEventListener("change", function() {
+    const selectedValue = this.value;
+    
+    if (selectedValue.includes(",")) {
+      // إذا كانت القيمة تحتوي على فاصلة، فهي إحداثيات
+      const coords = selectedValue.split(",").map(Number);
+      const distance = haversineDistance(storeCoords, coords);
+      localStorage.setItem("distance_km", distance.toFixed(2));
+    } else {
+      // إذا كانت القيمة نصية (اسم منطقة)، نستخدم مسافة افتراضية
+      localStorage.setItem("distance_km", "5.00");
+    }
+    
+    // تحديث الفاتورة بعد تغيير الموقع
+    renderInvoice();
+  });
+
+  // معالجة تقديم النموذج
+  document.getElementById("checkout-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = Object.fromEntries(new FormData(this));
+    const orderData = {
+      ...formData,
+      cart,
+      date: new Date().toLocaleDateString('ar-EG')
+    };
+
+    localStorage.setItem("orderData", JSON.stringify(orderData));
+
+    // حساب الإجمالي
+    let subtotal = 0;
+    let itemList = "";
+    for (let id in cart) {
+      const item = cart[id];
+      const totalItem = item.quantity * item.price;
+      subtotal += totalItem;
+      itemList += `${item.name} × ${item.quantity} = ${totalItem.toFixed(2)} جنيه\n`;
+    }
+
+    const discount = subtotal * discountRate;
+    const vat = (subtotal - discount) * vatRate;
+    const shippingCost = calculateShippingCost(parseFloat(localStorage.getItem("distance_km") || "0"));
+    const total = subtotal - discount + vat + shippingCost;
+
+    // إرسال الإيميل
+    if (orderData.email) {
+      emailjs.send("service_5pcglet", "template_cmu4qhs", {
+        name: orderData.name,
+        phone: orderData.phone,
+        address: orderData.address || "لم يتم إدخال عنوان",
+        paymentMethod: orderData["payment-method"] === "cod" ? "الدفع عند الاستلام" : "بطاقة ائتمان",
+        items: itemList,
+        total: total.toFixed(2),
+        date: orderData.date,
+        to_email: orderData.email
+      }).then(() => {
+        alert("✅ تم إرسال الفاتورة على إيميلك بنجاح");
+      }).catch(err => {
+        console.error("❌ فشل في إرسال الإيميل:", err);
+      });
+    }
+  });
+
+  // عرض الفاتورة عند تحميل الصفحة
+  document.addEventListener("DOMContentLoaded", function() {
+    // تعيين مسافة افتراضية إذا لم تكن موجودة
+    if (!localStorage.getItem("distance_km")) {
+      localStorage.setItem("distance_km", "0.00");
+    }
+    
+    renderInvoice();
+  });
+</script>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
@@ -156,190 +449,4 @@
 </script>
 
 
-
-
-  
-  <div class="invoice-box" style="
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-">
-    <h2>🧾 الفاتورة</h2>
-    <div id="invoice">
-      <table>
-        <thead>
-          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td> عبوة شاي دودز 6 مشروب 1 معلقة سكر</td>
-          <td>1</td>
-          <td>26.00 ج</td>
-        </tr>
-        <tr>
-          <td>عبوة شاي دودز 6 مشروب 2 معلقة سكر</td>
-          <td>1</td>
-          <td>26.00 ج</td>
-        </tr></tbody>
-      </table>
-      <div class="summary">
-        <p>💵 المبلغ: 52.00 ج</p>
-        <p>🎁 بعد الخصم: 5.20 ج</p>
-        <p>🧾 ضريبة القيمة المضافة: 0.00 ج</p>
-        <p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
-        <hr>
-        <p>💰 الإجمالي: 46.80 ج</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  const invoiceEl = document.getElementById("invoice");
-  const cart = JSON.parse(localStorage.getItem("cart")) || {};
-  const vatRate = 0.0;
-  const discountRate = 0.1;
-
-  function renderInvoice() {
-    if (Object.keys(cart).length === 0) {
-      invoiceEl.innerHTML = "<p>السلة فارغة.</p>";
-      return;
-    }
-
-    let subtotal = 0;
-    let rows = "";
-
-    for (let id in cart) {
-      const item = cart[id];
-      const totalItem = item.quantity * item.price;
-      subtotal += totalItem;
-
-      rows += `
-        <tr>
-          <td>${item.name}</td>
-          <td>${item.quantity}</td>
-          <td>${totalItem.toFixed(2)} ج</td>
-        </tr>`;
-    }
-
-    const discount = subtotal * discountRate;
-    const vat = (subtotal - discount) * vatRate;
-    const total = subtotal - discount + vat;
-    localStorage.setItem("checkoutTotal", total.toFixed(2));
-
-    invoiceEl.innerHTML = `
-      <table>
-        <thead>
-          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-      <div class="summary">
-        <p>💵 المبلغ: ${subtotal.toFixed(2)} ج</p>
-        <p>🎁 بعد الخصم: ${discount.toFixed(2)} ج</p>
-        <p>🧾 ضريبة القيمة المضافة: ${vat.toFixed(2)} ج</p>
-	<p>خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
-        <hr>
-        <p>💰 الإجمالي: ${total.toFixed(2)} ج</p>
-      </div>
-    `;
-  }
-
-  renderInvoice();
-
-  document.getElementById("checkout-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const formData = Object.fromEntries(new FormData(this));
-    const orderData = {
-      ...formData,
-      cart,
-      date: new Date().toLocaleDateString('ar-EG')
-    };
-
-    localStorage.setItem("orderData", JSON.stringify(orderData));
-  });
-</script>
-<button class="print-btn" onclick="window.print()" style="
-    margin-top: 10px;
-">🖨️ طباعة الفاتورة</button>
-
-
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  emailjs.init("UPtxd1MC2SrpDzWal"); // ✅ EmailJS Public Key
-
-  const order = JSON.parse(localStorage.getItem("orderData")) || {};
-  const cart = order.cart || {};
-  const vatRate = 0.0;
-  const discountRate = 0.10;
-
-  if (order.name && Object.keys(cart).length > 0) {
-    const customerDiv = document.getElementById("customer-details");
-    const tbody = document.querySelector("#order-table tbody");
-    const summary = document.getElementById("price-summary");
-
-    customerDiv.innerHTML = `
-      <p><strong>👤 الاسم:</strong> ${order.name}</p>
-      <p><strong>📍 العنوان:</strong> ${order.address}</p>
-      <p><strong>📱 الهاتف:</strong> ${order.phone}</p>
-      <p><strong>💳 طريقة الدفع:</strong> ${order.payment}</p>
-      <p><strong>📅 التاريخ:</strong> ${order.date || new Date().toLocaleDateString('ar-EG')}</p>
-    `;
-
-    let subtotal = 0;
-    let itemList = '';
-
-    for (let id in cart) {
-      const item = cart[id];
-      const itemTotal = item.quantity * item.price;
-      subtotal += itemTotal;
-
-      itemList += `${item.name} × ${item.quantity} = ${itemTotal} جنيه\n`;
-
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.quantity}</td>
-        <td>${itemTotal.toFixed(2)} جنيه</td>
-      `;
-      tbody.appendChild(row);
-    }
-
-    const discount = subtotal * discountRate;
-    const vat = (subtotal - discount) * vatRate;
-    const total = subtotal - discount + vat;
-
-    summary.innerHTML = `
-      <p>💵 المجموع: ${subtotal.toFixed(2)} جنيه</p>
-      <p>🎁 الخصم (${discountRate * 100}%): ${discount.toFixed(2)} جنيه</p>
-      <p>🧾 ضريبة القيمة المضافة (${vatRate * 0}%): ${vat.toFixed(2)} جنيه</p>
-      <hr>
-      <p><strong>💰 الإجمالي: ${total.toFixed(2)} جنيه</strong></p>
-    `;
-
-    // ✅ إرسال الفاتورة بالإيميل
-    if (order.email) {
-      emailjs.send("service_5pcglet", "template_cmu4qhs", {
-        name: order.name,
-        phone: order.phone,
-        address: order.address,
-        paymentMethod: order.payment,
-        items: itemList,
-        total: total.toFixed(2),
-        date: new Date().toLocaleDateString('ar-EG'),
-        to_email: order.email
-      }).then(() => {
-        console.log("📩 تم إرسال الفاتورة على الإيميل.");
-      }).catch(err => {
-        console.error("❌ فشل إرسال الإيميل:", err);
-      });
-    }
-  } else {
-    document.querySelector(".invoice-box").innerHTML = "<p>❗ لا يوجد بيانات لعرض الفاتورة.</p>";
-  }
-  
-</script>
-<script src="paymob.js"></script>
-<!-- Code injected--></body></html>
+</body></html>
