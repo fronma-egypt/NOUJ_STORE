@@ -41,3 +41,46 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>تم تأكيد الطلب</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">☕ متجر الشاي الفاخر</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="confirmation-section">
+    <h2>🎉 تم تأكيد طلبك بنجاح!</h2>
+    <p>شكرًا لتسوقك معنا ❤️</p>
+    <p>سيتم تجهيز طلبك وشحنه في أقرب وقت ممكن.</p>
+    <a href="index.html" class="btn">العودة للرئيسية</a>
+  </section>
+
+  <footer>
+    <p>© 2025 متجر الشاي الفاخر - جميع الحقوق محفوظة</p>
+  </footer>
+<script>
+    const trackingCode = localStorage.getItem("lastTracking");
+    if (trackingCode) {
+        const section = document.querySelector(".confirmation-section");
+        const p = document.createElement("p");
+        p.innerHTML = `📦 كود تتبع طلبك: <strong>${trackingCode}</strong>`;
+        section.appendChild(p);
+        localStorage.removeItem("lastTracking"); // نحذف الكود بعد عرضه
+    }
+</script>
+
+</body>
+</html>
