@@ -1,47 +1,11 @@
-<html lang="ar" dir="rtl"><head>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
   <meta charset="UTF-8">
   <title>سلة المشتريات - NOUJ STORE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cart.css">
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </head>
 <body>
 
@@ -51,167 +15,25 @@
       <ul>
         <li><a href="index.html">الرئيسية</a></li>
         <li><a href="products.html">المنتجات</a></li>
-    </ul></nav>
+    </nav>
   </header>
 
-  <main class="cart-container" style="
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-">
-    <h2 style="
-    margin-bottom: 0px;
-">🛒 سلة المشتريات</h2>
-    <div id="cart-items" class="cart-items"><div class="cart-item">
-        <div class="item-info">
-          <strong> كيس شاي دودز 36 مشروب 2 معلقة سكر</strong><br>
-          <small>135 جنيه × 1</small><br>
-          <strong>135.00 جنيه</strong>
-        </div>
-        <div class="item-actions">
-          <button onclick="changeQty('prod5', 1)">➕</button>
-          <span>1</span>
-          <button onclick="changeQty('prod5', -1)">➖</button>
-          <button class="remove-btn" onclick="removeItem('prod5')">❌</button>
-        </div>
-      </div><div class="cart-item">
-        <div class="item-info">
-          <strong> عبوة شاي دودز 6 مشروب 1 معلقة سكر</strong><br>
-          <small>26 جنيه × 1</small><br>
-          <strong>26.00 جنيه</strong>
-        </div>
-        <div class="item-actions">
-          <button onclick="changeQty('prod1', 1)">➕</button>
-          <span>1</span>
-          <button onclick="changeQty('prod1', -1)">➖</button>
-          <button class="remove-btn" onclick="removeItem('prod1')">❌</button>
-        </div>
-      </div></div>
-    <div class="total-section" style="
-    margin-top: 0px;
-">
+  <main class="cart-container">
+    <h2>🛒 سلة المشتريات</h2>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="total-section">
       <span>💰 الإجمالي:</span>
-      <strong><span id="total-price">144.90</span> جنيه</strong>
+      <strong><span id="total-price">0</span> جنيه</strong>
     </div>
     <button class="checkout-btn" onclick="goToCheckout()">✅ إتمام الطلب</button>
   </main>
   <div id="discount-section">
-    <p>💵 السعر قبل الخصم: <strong><span id="original-total">161.00</span> جنيه</strong></p>
-    <p>🎁 قيمة الخصم: <strong><span id="discount-amount">16.10</span> جنيه</strong></p>
+    <p>💵 السعر قبل الخصم: <strong><span id="original-total">0</span> جنيه</strong></p>
+    <p>🎁 قيمة الخصم: <strong><span id="discount-amount">0</span> جنيه</strong></p>
   </div>  
 <p> خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
   <div class="toast" id="toast-msg"></div>
   <script src="cart.js"></script>
   <footer>
     <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
-  </footer></body></html>
-
-<html lang="ar" dir="rtl"><head>
-  <meta charset="UTF-8">
-  <title>سلة المشتريات - NOUJ STORE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cart.css">
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
-</head>
-<body>
-
-  <header class="header">
-    <div class="logo">NOUJ STORE</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="products.html">المنتجات</a></li>
-    </ul></nav>
-  </header>
-
-  <main class="cart-container" style="
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-">
-    <h2 style="
-    margin-bottom: 0px;
-">🛒 سلة المشتريات</h2>
-    <div id="cart-items" class="cart-items"><div class="cart-item">
-        <div class="item-info">
-          <strong> كيس شاي دودز 36 مشروب 2 معلقة سكر</strong><br>
-          <small>135 جنيه × 1</small><br>
-          <strong>135.00 جنيه</strong>
-        </div>
-        <div class="item-actions">
-          <button onclick="changeQty('prod5', 1)">➕</button>
-          <span>1</span>
-          <button onclick="changeQty('prod5', -1)">➖</button>
-          <button class="remove-btn" onclick="removeItem('prod5')">❌</button>
-        </div>
-      </div><div class="cart-item">
-        <div class="item-info">
-          <strong> عبوة شاي دودز 6 مشروب 1 معلقة سكر</strong><br>
-          <small>26 جنيه × 1</small><br>
-          <strong>26.00 جنيه</strong>
-        </div>
-        <div class="item-actions">
-          <button onclick="changeQty('prod1', 1)">➕</button>
-          <span>1</span>
-          <button onclick="changeQty('prod1', -1)">➖</button>
-          <button class="remove-btn" onclick="removeItem('prod1')">❌</button>
-        </div>
-      </div></div>
-    <div class="total-section" style="
-    margin-top: 0px;
-">
-      <span>💰 الإجمالي:</span>
-      <strong><span id="total-price">144.90</span> جنيه</strong>
-    </div>
-    <button class="checkout-btn" onclick="goToCheckout()">✅ إتمام الطلب</button>
-  </main>
-  <div id="discount-section">
-    <p>💵 السعر قبل الخصم: <strong><span id="original-total">161.00</span> جنيه</strong></p>
-    <p>🎁 قيمة الخصم: <strong><span id="discount-amount">16.10</span> جنيه</strong></p>
-  </div>  
-<p> خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
-  <div class="toast" id="toast-msg"></div>
-  <script src="cart.js"></script>
-  <footer>
-    <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
-  </footer></body></html>
+  </footer>
