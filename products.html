@@ -20,47 +20,10 @@
   <meta name="twitter:image" content="https://nouj.com/assets/twitter-card.jpg">
   
   <!-- Canonical -->
-  <link rel="canonical" href="https://nouj.com">
-      <link rel="stylesheet" href="styles.css">
-  <!-- Code injected by live-server -->
-  <script>
-    // <![CDATA[  <-- For SVG support
-    if ('WebSocket' in window) {
-      (function () {
-        function refreshCSS() {
-          var sheets = [].slice.call(document.getElementsByTagName("link"));
-          var head = document.getElementsByTagName("head")[0];
-          for (var i = 0; i < sheets.length; ++i) {
-            var elem = sheets[i];
-            var parent = elem.parentElement || head;
-            parent.removeChild(elem);
-            var rel = elem.rel;
-            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-              elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-            }
-            parent.appendChild(elem);
-          }
-        }
-        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-        var address = protocol + window.location.host + window.location.pathname + '/ws';
-        var socket = new WebSocket(address);
-        socket.onmessage = function (msg) {
-          if (msg.data == 'reload') window.location.reload();
-          else if (msg.data == 'refreshcss') refreshCSS();
-        };
-        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-          console.log('Live reload enabled.');
-          sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-        }
-      })();
-    }
-    else {
-      console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-    }
-    // ]]>
-  </script>
-  </head>
+  
+      
+
+  <link rel="canonical" href="https://nouj.com"><link rel="stylesheet" href="http://127.0.0.1:5500/styles.css?_cacheOverride=1756317849526"></head>
   <body style="
       /* padding-top: 0px; */
       /* padding-right: 0px; */
@@ -93,155 +56,50 @@
             </ul>
         </nav>
     </header>
-    <div class="products-container" style="margin-top: 0px;padding-right: 0px;padding-top: 30px;padding-bottom: 0px;padding-left: 0px;/* width: 340px; */">
-       <div class="product" data-id="prod1" data-name="شاي دودز 6 مشروب" data-price="26" style="
-      padding-bottom: 8px;
-      padding-top: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-        <img src="111.png" alt=" شاي">
-        <img src="IMG-20250410-WA0033.png" alt="أيقونة" class="desc-icon">
-        <h3>عبوة شاي دودز 6 مشروب </h3>
-        <p>السعر: 26 جنيه</p>
-        <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-        <button class="btn add-to-cart" data-id="prod1" data-name=" عبوة شاي دودز 6 مشروب 1 معلقة سكر" data-price="26" data-discount="10%" style="
-      margin-top: 0px;
-      padding-bottom: 5px;
-      padding-top: 5px;
-      padding-right: 5px;
-      padding-left: 5px;
-  ">إضافة إلى السلة</button>
-       </div>
+    <div class="products-container" style="margin-top: 0px;padding-right: 0px;padding-top: 20px;padding-bottom: 0px;padding-left: 0px;width: 340px;">
+
+     <div class="product" data-id="prod1" data-name="علبة شاي دودز 12 عبوة
+1 ملعقة سكر " data-price="288" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 138px;height: 446px;">
+
+    <img src="111.png" alt="شاي معلقتين سكر" style="
+    width: 120px;
+    height: 90px;
+">
+
+    <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon" style="
+    width: 120px;
+    height: 70px;
+">
+
+    <h5> علبة شاي دودز 12 عبوة </h5>
+        <h5>1 ملعقة سكر </h5>
+
+            <h5 style="
+    margin-bottom: 5px;
+    height: 20px;
+"> ----------------</h5>
+
+
+
   
-      <div class="product" data-id="prod2" data-name="شاي دودز 6 مشروب 2 معلقة سكر" data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-            <img src="222.png" alt="شاي معلقتين سكر">
-            <img src="IMG-20250410-WA0032.png" alt="أيقونة" class="desc-icon">
-            <h3>عبوة شاي دودز 6 مشروب </h3>
-            <p>السعر: 26 جنيه</p>
-            <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-            <button class="btn add-to-cart" data-id="prod2" data-name="عبوة شاي دودز 6 مشروب 2 معلقة سكر" data-price="26" style="
-      margin-top: 0px;
-      padding-top: 5px;
-      padding-right: 5px;
-      padding-left: -;
-      padding-left: 5px;
-      padding-bottom: 5px;
-  ">إضافة إلى السلة</button>
-      </div>
-  
-      <div class="product" data-id="prod3" data-name="شاي دودز 6 مشروب 3 معلقة سكر" data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-        <img src="333.png" alt="شاي ثلاث ملاعق سكر">
-            <img src="IMG-20250410-WA0035.png" alt="أيقونة" class="desc-icon">
-            <h3>عبوة شاي دودز 6 مشروب </h3>
-            <p>السعر: 26 جنيه</p>
-            <p class="discount" style="margin-top: 0px;width: 68px;height: 22px;margin-bottom: 5px;">خصم 10%</p>
-            <button class="btn add-to-cart" data-id="prod3" data-name=" عبوة شاي دودز 6 مشروب 3 معلقة سكر" data-price="26" style="
-      margin-top: 0px;
-      padding-top: 5px;
-      padding-left: 5px;
-      padding-bottom: 5px;
-      padding-right: 5px;
-  ">إضافة إلى السلة</button>
-        </div>
-  
-    <div class="product" data-id="prod4" data-name="كيس شاي دودز 36 مشروب 1 معلقة سكر  " data-price="26" style="
-      padding-top: 8px;
-      padding-left: 4px;
-      padding-right: 4px;
-      padding-bottom: 8px;
-      width: 128px;
-  ">
-      <img src="111.png" alt="شاي معلقة سكر">
-        <img src="IMG-20250410-WA0031.jpg" alt="أيقونة" class="desc-icon">
-        <h3>كيس شاي دودز 36 مشروب</h3>
-        <p>السعر: 135 جنيه</p>
-        <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-        <button class="btn add-to-cart" data-id="prod4" data-name="كيس شاي دودز 36 مشروب 1 معلقة سكر" data-price="135" style="padding-right: 5px;padding-left: 5px;padding-bottom: 5px;padding-top: 5px;margin-top: 0px;">إضافة إلى السلة</button>
-    </div>
-  
-    <div class="product" data-id="prod5" data-name="كيس شاي دودز 36 مشروب 2 معلقة سكر  " data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-      <img src="222.png" alt="شاي معلقتين سكر">
-        <img src="IMG-20250410-WA0034.jpg" alt="أيقونة" class="desc-icon">
-        <h3>كيس شاي دودز 36 مشروب</h3>
-        <p>السعر: 135 جنيه</p>
-        <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-        <button class="btn add-to-cart" data-id="prod5" data-name=" كيس شاي دودز 36 مشروب 2 معلقة سكر" data-price="135" style="
-      margin-top: 0px;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-right: 8px;
-      padding-left: 8px;
-  ">إضافة إلى السلة</button>
-    </div>
-  
-    <div class="product" data-id="prod6" data-name="كيس شاي دودز 36 مشروب 3 معلقة سكر " data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-      <img src="333.png" alt="شاي ثلاث ملاعق سكر">
-        <img src="WhatsApp Image 2025-04-10 at 03.52.42_f5e4e3e0.jpg" alt="أيقونة" class="desc-icon">
-        <h3>كيس شاي دودز 36 مشروب</h3>
-        <p>السعر: 135 جنيه</p>
-        <p class="discount" style="margin-bottom: 5px;margin-top: 0px;">خصم 10%</p>
-        <button class="btn add-to-cart" data-id="prod6" data-name="كيس شاي دودز 36 مشروب 3 معلقة سكر" data-price="135" style="
-      margin-top: 0px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 8px;
-      padding-left: 8px;
-  ">إضافة إلى السلة</button>
-    </div>
-    <div class="product" data-id="prod7" data-name="علبة شاي دودز 12 عبوة 1 معلقة سكر  " data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
-  ">
-     <img src="111.png" alt="شاي معلقة سكر">
-    <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon">
-    <h3>علبة شاي دودز 12 عبوة</h3>
-    <p>السعر: 288 جنيه</p>
+    <img src="IMG-20250410-WA0033.png" alt="أيقونة" class="desc-icon" style="
+    width: 50px;
+    height: 50px;
+">
+
+    <h5> العبوة داخل العلبة 6 مشروب</h5>
+        <h5 style="
+    height: 20px;
+"> ---------------- </h5>
+
+
+
+    <p>سعر العلبة : 306</p>
     <p class="discount" style="
       margin-top: 0px;
       margin-bottom: 5px;
   ">خصم 10%</p>
-    <button class="btn add-to-cart" data-id="prod7" data-name=" علبة شاي دودز 12 عبوة 1 معلقة سكر" data-price="288" style="
+    <button class="btn add-to-cart" data-id="prod1" data-name=" علبة شاي دودز 12 عبوة 1 معلقة سكر" data-price="288" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -249,16 +107,105 @@
       padding-left: 8px;
   ">إضافة إلى السلة</button>
   </div>
-  <div class="product" data-id="prod8" data-name="علبة شاي دودز 12 عبوة 2 معلقة سكر  " data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 128px;">
-    <img src="222.png" alt="شاي معلقتين سكر">
-      <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon">
-      <h3>علبة شاي دودز 12 عبوة</h3>
-      <p>السعر: 288 جنيه</p>
-      <p class="discount" style="
+    <div class="product" data-id="prod2" data-name="علبة شاي دودز 12 عبوة
+2 ملعقة سكر " data-price="288" style="
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 4px;
+      width: 138px;
+      height: 446px;
+  ">
+     <img src="222.png" alt="شاي معلقة سكر" style="
+    width: 120px;
+    height: 90px;
+">
+
+    <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon" style="
+    width: 120px;
+    height: 70px;
+">
+
+    <h5> علبة شاي دودز 12 عبوة </h5>
+        <h5>2 ملعقة سكر </h5>
+
+            <h5 style="
+    margin-bottom: 5px;
+    height: 20px;
+"> ----------------- </h5>
+
+
+
+  
+    <img src="IMG-20250410-WA0032.png" alt="أيقونة" class="desc-icon" style="
+    width: 50px;
+    height: 50px;
+">
+
+    <h5> العبوة داخل العلبة 6 مشروب</h5>
+        <h5 style="
+    height: 20px;
+"> ---------------- </h5>
+
+
+
+    <p>سعر العلبة : 306</p>
+    <p class="discount" style="
       margin-top: 0px;
       margin-bottom: 5px;
   ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod8" data-name=" علبة شاي دودز 12 عبوة 2 معلقة سكر" data-price="288" style="
+    <button class="btn add-to-cart" data-id="prod2" data-name=" علبة شاي دودز 12 عبوة
+2 ملعقة سكر" data-price="288" style="
+      margin-top: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 8px;
+      width: 120px;
+  ">إضافة إلى السلة</button>
+  </div>
+    <div class="product" data-id="prod3" data-name="علبة شاي دودز 12 عبوة 2 معلقة سكر  " data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 138px;height: 446px;">
+
+    <img src="333.png" alt="شاي معلقتين سكر" style="
+    height: 90px;
+    width: 120px;
+">
+
+    <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon" style="
+    width: 120px;
+    height: 70px;
+">
+
+    <h5> علبة شاي دودز 12 عبوة </h5>
+        <h5>3 ملعقة سكر </h5>
+
+            <h5 style="
+    margin-bottom: 5px;
+    height: 20px;
+"> ---------------- </h5>
+
+
+
+  
+    <img src="IMG-20250410-WA0035.png" alt="أيقونة" class="desc-icon" style="
+    width: 50px;
+    height: 50px;
+">
+
+    <h5> العبوة داخل العلبة 6 مشروب</h5>
+        <h5 style="
+    height: 20px;
+"> ---------------- </h5>
+
+
+
+    <p>سعر العلبة : 306</p>
+    <p class="discount" style="
+      margin-top: 0px;
+      margin-bottom: 5px;
+  ">خصم 10%</p>
+    <button class="btn add-to-cart" data-id="prod3" data-name=" علبة شاي دودز 12 عبوة
+3 ملعقة سكر" data-price="288" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -267,45 +214,25 @@
   ">إضافة إلى السلة</button>
   </div>
   
-  <div class="product" data-id="prod9" data-name="علبة شاي دودز 12 عبوة 3 معلقة سكر  " data-price="26" style="
+   
+  
+  <div class="product" data-id="prod4" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 1 معلقة سكر  " data-price="26" style="
       padding-top: 8px;
       padding-bottom: 8px;
       padding-right: 4px;
       padding-left: 4px;
-      width: 128px;
-  ">
-    <img src="333.png" alt="شاي ثلاث ملاعق سكر">
-      <img src="IMG-20250410-WA0037.png" alt="أيقونة" class="desc-icon">
-      <h3>علبة شاي دودز 12 عبوة</h3>
-      <p>السعر: 288 جنيه</p>
-      <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod9" data-name=" علبة شاي دودز 12 عبوة 3 معلقة سكر" data-price="288" style="
-      margin-top: 0px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 8px;
-      padding-left: 8px;
-  ">إضافة إلى السلة</button>
-  </div>
-  <div class="product" data-id="prod10" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 1 معلقة سكر  " data-price="26" style="
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px;
-      width: 128px;
+      width: 138px;
+      height: 356px;
   ">
     <img src="111.png" alt=" سكر مناهل">
       <img src="box1.png" alt="أيقونة" class="desc-icon">
-      <h3>كرتونة شاي دودز 6 علبة 12 عبوة</h3>
-      <p>السعر: 1728 جنيه</p>
+      <h5>كرتونة شاي دودز 6 علبة 12 عبوة</h5>
+      <h5>السعر: 1836 جنيه</h5>
       <p class="discount" style="
       margin-top: 0px;
       margin-bottom: 5px;
   ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod10" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 1 معلقة سكر" data-price="1728" style="
+      <button class="btn add-to-cart" data-id="prod4" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 1 معلقة سكر" data-price="1728" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-right: 8px;
@@ -314,22 +241,23 @@
   ">إضافة إلى السلة</button>
   </div>
   
-  <div class="product" data-id="prod11" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 2 معلقة سكر  " data-price="26" style="
+  <div class="product" data-id="prod5" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 2 معلقة سكر  " data-price="26" style="
       padding-top: 8px;
       padding-bottom: 8px;
       padding-right: 4px;
       padding-left: 4px;
-      width: 128px;
+      width: 138px;
+      height: 356px;
   ">
     <img src="222.png" alt=" ارز مناهل">
       <img src="box1.png" alt="أيقونة" class="desc-icon">
-      <h3>كرتونة شاي دودز 6 علبة 12 عبوة</h3>
-      <p>السعر: 1728 جنيه</p>
+      <h5>كرتونة شاي دودز 6 علبة 12 عبوة</h5>
+      <h5>السعر: 1836 جنيه</h5>
       <p class="discount" style="
       margin-top: 0px;
       margin-bottom: 5px;
   ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod11" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 2 معلقة سكر" data-price="1728" style="
+      <button class="btn add-to-cart" data-id="prod5" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 2 معلقة سكر" data-price="1728" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -337,22 +265,23 @@
       padding-left: 8px;
   ">إضافة إلى السلة</button>
   </div>
-  <div class="product" data-id="prod12" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر  " data-price="26" style="
+  <div class="product" data-id="prod6" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر  " data-price="26" style="
       padding-top: 8px;
       padding-bottom: 8px;
       padding-right: 4px;
       padding-left: 4px;
-      width: 128px;
+      width: 138px;
+      height: 356px;
   ">
     <img src="333.png" alt=" ارز مناهل">
     <img src="box1.png" alt="أيقونة" class="desc-icon">
-    <h3>كرتونة شاي دودز 6 علبة 12 عبوة</h3>
-    <p>السعر: 1728 جنيه</p>
+    <h5>كرتونة شاي دودز 6 علبة 12 عبوة</h5>
+      <h5>السعر: 1836 جنيه</h5>
     <p class="discount" style="
       margin-top: 0px;
       margin-bottom: 5px;
   ">خصم 10%</p>
-    <button class="btn add-to-cart" data-id="prod12" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر" data-price="1728" style="
+    <button class="btn add-to-cart" data-id="prod6" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر" data-price="1728" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
@@ -360,160 +289,350 @@
       padding-left: 8px;
   ">إضافة إلى السلة</button>
   </div>
-  <div class="product" data-id="prod13" data-name="كيس شاي دودز 36 مشروب 1 معلقة سكر  بالكوباية" data-price="26" style="
+  <div class="product" data-id="prod7" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 1 معلقة سكر  " data-price="26" style="
       padding-top: 8px;
       padding-bottom: 8px;
       padding-right: 4px;
       padding-left: 4px;
-      width: 128px;
+      width: 138px;
+      height: 356px;
   ">
-    <img src="111.png" alt="شاي معلقة سكر">
-      <img src="12.png" alt="أيقونة" class="desc-icon">
-      <h3>كيس شاي دودز 36 مشروب + بالكوباية</h3>
-      <p>السعر: 160 جنيه</p>
+    <img src="111.png" alt=" سكر مناهل" style="
+    width: 130px;
+    height: 106px;
+">
+      <img src="م1.png" alt="أيقونة" class="desc-icon" style="
+    width: 130px;
+    height: 43px;
+    margin-bottom: 7px;
+">
+      <h5 style="
+    margin-bottom: 12px;
+">علبة شاي دودز 36 مشروب 1 معلقة سكر</h5>
+      <h5 style="
+    margin-bottom: 10px;
+">السعر: 160 جنيه</h5>
       <p class="discount" style="
       margin-top: 0px;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
   ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod13" data-name=" كيس شاي دودز 36 مشروب 1 معلقة سكر بالكوباية" data-price="160" style="
+      <button class="btn add-to-cart" data-id="prod7" data-name="علبة شاي دودز 36 مشروب 1 معلقة سكر" data-price="1728" style="
       margin-top: 0px;
       padding-top: 8px;
-      padding-bottom: 8px;
       padding-right: 8px;
+      padding-bottom: 8px;
       padding-left: 8px;
   ">إضافة إلى السلة</button>
   </div>
   
-  <div class="product" data-id="prod14" data-name="كيس شاي دودز 36 مشروب 2 معلقة سكر  بالكوباية" data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 128px;">
-    <img src="222.png" alt="شاي معلقتين سكر">
-      <img src="23.png" alt="أيقونة" class="desc-icon">
-      <h3>كيس شاي دودز 36 مشروب + بالكوباية</h3>
-      <p>السعر: 160 جنيه</p>
-      <p class="discount" style="
-      margin-top: 0px;
-      margin-bottom: 5px;
-  ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod14" data-name=" كيس شاي دودز 36 مشروب 2 معلقة سكر بالكوباية" data-price="160" style="
-      margin-top: 0px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 8px;
-      padding-left: 8px;
-  ">إضافة إلى السلة</button>
-    </div>
-  
-      <div class="product" data-id="prod15" data-name="كيس شاي دودز 36 مشروب 3 معلقة سكر  بالكوباية" data-price="26" style="
+  <div class="product" data-id="prod8" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 2 معلقة سكر  " data-price="26" style="
       padding-top: 8px;
       padding-bottom: 8px;
       padding-right: 4px;
       padding-left: 4px;
-      width: 128px;
+      width: 138px;
+      height: 356px;
   ">
-        <img src="333.png" alt="شاي ثلاث ملاعق سكر">
-         <img src="34.png" alt="أيقونة" class="desc-icon">
-      <h3>كيس شاي دودز 36 مشروب + الكوباية</h3>
-      <p>السعر: 160 جنيه</p>
+    <img src="222.png" alt=" ارز مناهل">
+      <img src="2م.png" alt="أيقونة" class="desc-icon" style="height: 40px;width: 130px;margin-bottom: 9px;">
+      <h5 style="
+    margin-bottom: 12px;
+">علبة شاي دودز 36 مشروب 2 معلقة سكر</h5>
+      <h5 style="
+    margin-bottom: 8px;
+">السعر: 160 جنيه</h5>
       <p class="discount" style="
       margin-top: 0px;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
   ">خصم 10%</p>
-      <button class="btn add-to-cart" data-id="prod15" data-name=" كيس شاي دودز 36 مشروب 3 معلقة سكر بالكوباية" data-price="160" style="
+      <button class="btn add-to-cart" data-id="prod8" data-name="علبة شاي دودز 36 مشروب 2 معلقة سكر" data-price="1728" style="
       margin-top: 0px;
       padding-top: 8px;
       padding-bottom: 8px;
-      padding-left: 8px;
       padding-right: 8px;
+      padding-left: 8px;
   ">إضافة إلى السلة</button>
   </div>
-    </div>
-  
-    <footer style="
-      margin-top: 0px;
-      padding-right: 0px;
-      padding-left: 0px;
-      padding-top: 0px;
-      padding-bottom: 0px;
+  <div class="product" data-id="prod9" data-name="كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر  " data-price="26" style="
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 4px;
+      width: 138px;
+      height: 356px;
   ">
-        <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE </p>
-    </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    <img src="333.png" alt=" ارز مناهل" style="
+    width: 130px;
+    margin-bottom: 0px;
+    height: 106px;
+">
+    <img src="3م.png" alt="أيقونة" class="desc-icon" style="
+    width: 130px;
+    height: 43px;
+    margin-bottom: 8px;
+">
+    <h5 style="
+    margin-bottom: 9px;
+">علبة شاي دودز 36 مشروب 3 معلقة سكر</h5>
+      <h5 style="
+    margin-bottom: 9px;
+">السعر: 160 جنيه</h5>
+    <p class="discount" style="
+      margin-top: 0px;
+      margin-bottom: 20px;
+  ">خصم 10%</p>
+    <button class="btn add-to-cart" data-id="prod9" data-name="علبة شاي دودز 36 مشروب 3 معلقة سكر" data-price="1728" style="
+      margin-top: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 8px;
+  ">إضافة إلى السلة</button>
+  </div>
+ 
+      <div class="product" data-id="prod10" data-name="كرتونة شاي دودز 12 علبة 36 مشروب
+1 ملعقة سكر" data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 138px;height: 446px;">
+
+        <img src="111.png" alt="شاي معلقتين سكر" style="
+        width: 120px;
+        height: 90px;
+    ">
+    
+        <img src="box1.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 70px;
+    ">
+    
+        <h5>كرتونة شاي دودز 12 علبة 36 مشروب</h5>
+            <h5>1 ملعقة سكر </h5>
+    
+                <h5 style="
+        margin-bottom: 5px;
+        height: 20px;
+    "> ----------------</h5>
+    
+    
+    
+      
+        <img src="م1.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 30px;
+    ">
+    
+    <h5> العلبة داخل الكرتونة 36 مشروب</h5>
+        <h5 style="
+        height: 20px;
+    "> ---------------- </h5>
+    
+    
+    
+        <p>سعر الكرتونة: 1836</p>
+        <p class="discount" style="
+          margin-top: 0px;
+          margin-bottom: 5px;
+      ">خصم 10%</p>
+        <button class="btn add-to-cart" data-id="prod10" data-name=" علبة شاي دودز 12 عبوة 1 معلقة سكر" data-price="288" style="
+          margin-top: 0px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-right: 8px;
+          padding-left: 8px;
+      ">إضافة إلى السلة</button>
+      </div>
+      <div class="product" data-id="prod11" data-name="علبة شاي دودز 12 عبوة 2 معلقة سكر  " data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 138px;height: 446px;">
+
+        <img src="111.png" alt="شاي معلقتين سكر" style="
+        width: 120px;
+        height: 90px;
+    ">
+    
+        <img src="box1.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 70px;
+    ">
+    
+        <h5>كرتونة شاي دودز 12 علبة 36 مشروب</h5>
+            <h5>2 ملعقة سكر </h5>
+    
+                <h5 style="
+        margin-bottom: 5px;
+        height: 20px;
+    "> ----------------</h5>
+    
+    
+    
+      
+        <img src="2م.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 30px;
+    ">
+    
+        <h5> العلبة داخل الكرتونة 36 مشروب</h5>
+            <h5 style="
+        height: 20px;
+    "> ---------------- </h5>
+    
+    
+    
+        <p>سعر الكرتونة: 1836</p>
+        <p class="discount" style="
+          margin-top: 0px;
+          margin-bottom: 5px;
+      ">خصم 10%</p>
+        <button class="btn add-to-cart" data-id="prod11" data-name="كرتونة شاي دودز 12 علبة 36 مشروب
+2 ملعقة سكر" data-price="288" style="
+          margin-top: 0px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-right: 8px;
+          padding-left: 8px;
+      ">إضافة إلى السلة</button>
+      </div>
+      <div class="product" data-id="prod12" data-name="كرتونة شاي دودز 12 علبة 36 مشروب 2 معلقة سكر  " data-price="26" style="padding-bottom: 8px;padding-top: 8px;padding-right: 4px;padding-left: 4px;width: 138px;height: 446px;">
+
+        <img src="111.png" alt="شاي معلقتين سكر" style="
+        width: 120px;
+        height: 90px;
+    ">
+    
+        <img src="box1.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 70px;
+    ">
+    
+        <h5>كرتونة شاي دودز 12 علبة 36 مشروب</h5>
+            <h5>3 ملعقة سكر </h5>
+    
+                <h5 style="
+        margin-bottom: 5px;
+        height: 20px;
+    "> ----------------</h5>
+    
+    
+    
+      
+        <img src="3م.png" alt="أيقونة" class="desc-icon" style="
+        width: 120px;
+        height: 30px;
+    ">
+    
+        <h5> العلبة داخل الكرتونة 36 مشروب</h5>
+            <h5 style="
+        height: 20px;
+    "> ---------------- </h5>
+    
+    
+    
+        <p>سعر الكرتونة: 1836</p>
+        <p class="discount" style="
+          margin-top: 0px;
+          margin-bottom: 5px;
+      ">خصم 10%</p>
+        <button class="btn add-to-cart" data-id="prod12" data-name="كرتونة شاي دودز 12 علبة 36 مشروب
+3 ملعقة سكر" data-price="288" style="
+          margin-top: 0px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          padding-right: 8px;
+          padding-left: 8px;
+      ">إضافة إلى السلة</button>
+      </div>
+       <div class="product" data-id="prod13" data-name="كرتونة شاي دودز 6 علبة 12 علبة 3 معلقة سكر  " data-price="26" style="
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 4px;
+      width: 148px;
+  ">
+    <img src="box2.png" alt=" ارز مناهل">
+    <h5>كرتونة 12 وجبة </h5>
+    <img src="1.png" alt="أيقونة" class="desc-icon" style="
+    height: 60px;
+    width: 140px;
+">
+        <h4>مكونات الوجبة </h4>
+                <h3> -------------- </h3>
+
+                <h45>مقرمشات * شاي + ملعقة سكر * شوفان * نعناع * كوب ورقي * ملعقة </h45>
+
+      <h5>سعر الكرتونة : 360 جنيه</h5>
+    <p class="discount" style="
+      margin-top: 0px;
+      margin-bottom: 5px;
+  ">خصم 10%</p>
+    <button class="btn add-to-cart" data-id="prod13" data-name="كرتونة 12 وجبة " data-price="360" style="
+      margin-top: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+      padding-left: 8px;
+  ">إضافة إلى السلة</button>
+  </div>
   
-      function saveCart() {
-        localStorage.setItem("cart", JSON.stringify(cart));
-      }
-  
-      function updateCartCount() {
-        const count = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
-        const counter = document.getElementById("cart-count");
-        if (counter) counter.innerText = count;
-      }
-  
-      function addToCart(product) {
-        const { id, name, price } = product;
-        if (!cart[id]) {
-          cart[id] = { name, price: parseFloat(price), quantity: 1 };
-        } else {
-          cart[id].quantity++;
-        }
-  
-        saveCart();
-        updateCartCount();
-        showAddedToast(name);
-      }
-  
-      function showAddedToast(name) {
-        const msg = document.createElement("div");
-        msg.className = "toast";
-        msg.textContent = `✅ تمت إضافة ${name} إلى السلة`;
-        msg.style.cssText = `
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background: #4caf50;
-          color: white;
-          padding: 10px 20px;
-          border-radius: 8px;
-          z-index: 9999;
-          font-weight: bold;
-        `;
-        document.body.appendChild(msg);
-        setTimeout(() => msg.remove(), 2500);
-      }
-  
-      document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", function () {
-          const product = {
-            id: this.dataset.id,
-            name: this.dataset.name,
-            price: this.dataset.price
-          };
-          addToCart(product);
-        });
-      });
-  
-      updateCartCount();
-    });document.addEventListener("DOMContentLoaded", function () {
-    const counter = document.getElementById("cart-count");
-  
-    function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || {};
-      const count = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
-      if (counter) {
-        counter.innerText = count;
-        counter.classList.add("bump");
-        setTimeout(() => counter.classList.remove("bump"), 300);
-      }
-    }
-  
-    updateCartCount(); // يحدث العداد عند فتح الصفحة
-  });
-  
-  </script>
+    <div class="product" data-id="prod14" data-name="كرتونة 12 وجبة 1 معلقة" data-price="26" style="
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 4px;
+      width: 148px;
+      height: 446px;
+  ">
+    <img src="box2.png" alt=" ارز مناهل">
+    <h5>كرتونة 12 وجبة </h5>
+    <img src="2.png" alt="أيقونة" class="desc-icon" style="
+    height: 60px;
+    width: 140px;
+">
+        <h4>مكونات الوجبة </h4>
+                <h3> -------------- </h3>
+
+                <h45>مقرمشات * شاي + 2 ملعقة سكر * شوفان * نعناع * كوب ورقي * ملعقة </h45>
+
+      <h5>سعر الكرتونة : 360 جنيه</h5>
+    <p class="discount" style="
+      margin-top: 0px;
+      margin-bottom: 5px;
+  ">خصم 10%</p>
+    <button class="btn add-to-cart" data-id="prod14" data-name=" كرتونة شاي دودز 6 علبة 12 عبوة 3 معلقة سكر" data-price="1728" style="
+      margin-top: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+      padding-left: 8px;
+  ">إضافة إلى السلة</button>
+  </div>
+  <div class="product" data-id="prod15" data-name="كرتونة 12 وجبة 2 ملعقة" data-price="26" style="
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 4px;
+      padding-left: 4px;
+      width: 148px;
+      height: 446px;
+  ">
+    <img src="box2.png" alt=" ارز مناهل">
+    <h5>كرتونة 12 وجبة </h5>
+    <img src="3.png" alt="أيقونة" class="desc-icon" style="
+    height: 60px;
+    width: 140px;
+">
+        <h4>مكونات الوجبة </h4>
+                <h3> -------------- </h3>
+
+                <h45>مقرمشات * شاي + 3 معالق سكر * شوفان * نعناع * كوب ورقي * ملعقة </h45>
+
+      <h5>سعر الكرتونة : 360 جنيه</h5>
+    <p class="discount" style="
+      margin-top: 0px;
+      margin-bottom: 5px;
+  ">خصم 10%</p>
+    <button class="btn add-to-cart" data-id="prod15" data-name="كرتونة 12 وجبة 3 ملعقة" data-price="1728" style="
+      margin-top: 0px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 8px;
+      padding-left: 8px;
+  ">إضافة إلى السلة</button>
+
   <!-- Code injected by live-server -->
   <script>
     // <![CDATA[  <-- For SVG support
@@ -667,6 +786,652 @@
 	}
 	// ]]>
 </script>
-
-
-</body></html>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</div><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</div><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+  <script src="cart.js"></script>
+  <script src="products-cart-integration.js"></script>
+  </body></html>
