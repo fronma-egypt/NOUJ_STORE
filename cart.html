@@ -2,41 +2,179 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>سلة المشتريات - NOUJ STORE</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cart.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
+  <!-- Header -->
   <header class="header">
-    <div class="logo">NOUJ STORE</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="products.html">المنتجات</a></li>
-        <li><a href="contact.html">اتصل بنا</a></li>
-        <li><a href="about.html">من نحن</a></li>
-
-    </nav>
+    <div class="container">
+      <div class="logo">NOUJ STORE</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="products.html">المنتجات</a></li>
+          <li><a href="cart.html" class="active">السلة <span id="cart-count" class="cart-count">0</span></a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="cart-container">
-    <h2>🛒 سلة المشتريات</h2>
-    <div id="cart-items" class="cart-items"></div>
-    <div class="total-section">
-      <span>💰 الإجمالي:</span>
-      <strong><span id="total-price">0</span> جنيه</strong>
+  <div class="cart-page">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1><i class="fas fa-shopping-cart"></i> سلة المشتريات</h1>
+        <p class="page-subtitle">مراجعة وإدارة منتجاتك المختارة</p>
+      </div>
+
+      <!-- Cart Content -->
+      <div class="cart-content">
+        <!-- Cart Items -->
+        <div class="cart-items-section">
+          <div id="cart-items" class="cart-items">
+            <!-- Cart items will be loaded here -->
+          </div>
+
+          <!-- Empty Cart State -->
+          <div id="empty-cart" class="empty-cart hidden">
+            <div class="empty-cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3>سلة المشتريات فارغة</h3>
+            <p>لم تقم بإضافة أي منتجات إلى السلة بعد</p>
+            <a href="products.html" class="continue-shopping-btn">
+              <i class="fas fa-arrow-left"></i>
+              تصفح المنتجات
+            </a>
+          </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary-section">
+          <div class="cart-summary-card">
+            <h3><i class="fas fa-receipt"></i> ملخص الطلب</h3>
+
+            <div class="summary-row">
+              <span>عدد المنتجات</span>
+              <span id="item-count">0</span>
+            </div>
+
+            <div class="summary-row">
+              <span>المجموع الفرعي</span>
+              <span id="subtotal">0.00 ج</span>
+            </div>
+
+            <div class="summary-row discount-row">
+              <span>الخصم (10%)</span>
+              <span id="discount">0.00 ج</span>
+            </div>
+
+            <div class="summary-row shipping-row">
+              <span>تكلفة الشحن</span>
+              <span id="shipping-cost">0.00 ج</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row total-row">
+              <span>الإجمالي الكلي</span>
+              <span id="total-price">0.00 ج</span>
+            </div>
+
+            <div class="shipping-info">
+              <i class="fas fa-info-circle"></i>
+              <small>الكيلو الأول: 10 جنيه، كل كيلو إضافي: 4 جنيه</small>
+            </div>
+
+            <div class="cart-actions">
+              <button class="checkout-btn" id="checkout-btn">
+                <i class="fas fa-credit-card"></i>
+                إتمام الطلب
+              </button>
+
+              <a href="products.html" class="continue-shopping-link">
+                <i class="fas fa-arrow-left"></i>
+                متابعة التسوق
+              </a>
+            </div>
+          </div>
+
+          <!-- Cart Features -->
+          <div class="cart-features">
+            <div class="feature-item">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <h4>دفع آمن</h4>
+                <p>معاملات محمية ومشفرة</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-truck"></i>
+              <div>
+                <h4>توصيل سريع</h4>
+                <p>توصيل خلال 1-2 أيام عمل</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-undo"></i>
+              <div>
+                <h4>إرجاع مجاني</h4>
+                <p>إمكانية الإرجاع خلال 7 أيام</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recently Viewed Products -->
+      <div class="recently-viewed-section">
+        <h3><i class="fas fa-history"></i> منتجات شاهدتها مؤخراً</h3>
+        <div id="recently-viewed" class="recently-viewed">
+          <!-- Recently viewed products will be loaded here -->
+        </div>
+      </div>
     </div>
-    <button class="checkout-btn" onclick="goToCheckout()">✅ إتمام الطلب</button>
-  </main>
-  <div id="discount-section">
-    <p>💵 السعر قبل الخصم: <strong><span id="original-total">0</span> جنيه</strong></p>
-    <p>🎁 قيمة الخصم: <strong><span id="discount-amount">0</span> جنيه</strong></p>
-  </div>  
-<p> خدمة التوصيل : الكيلو الاول 10 جنيه و ثم كل كيلو ب 4 جنيهات</p>
-  <div class="toast" id="toast-msg"></div>
-  <script src="cart.js"></script>
-  <footer>
-    <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loading-spinner">
+      <i class="fas fa-spinner fa-spin"></i>
+      <p>جاري التحديث...</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>NOUJ STORE</h3>
+        <p>متجرك المفضل لأجود أنواع الشاي الطبيعي</p>
+      </div>
+      <div class="footer-section">
+        <h3>تواصل معنا</h3>
+        <p><i class="fas fa-phone"></i> 01234567890</p>
+        <p><i class="fas fa-envelope"></i> info@nouj.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>جميع الحقوق محفوظة © 2025 - NOUJ STORE</h3>
+      </div>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="cart.js"></script>
+</body>
+</html>

@@ -3,84 +3,288 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تم تأكيد الطلب</title>
+  <title>تم تأكيد الطلب - NOUJ STORE</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #5000c0;
+      --secondary-color: #7c3aed;
+      --success-color: #10b981;
+      --accent-color: #f59e0b;
+      --light-bg: #f8fafc;
+      --white: #ffffff;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --border-radius: 16px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--light-bg) 0%, #e2e8f0 100%);
+      color: var(--gray-800);
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    /* Header */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .header .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .navbar a:hover {
+      color: var(--primary-color);
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      transition: var(--transition);
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    /* Main Container */
+    .confirmation-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    /* Success Section */
+    .success-section {
+      margin-bottom: 3rem;
+    }
+
+    .success-animation {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, var(--success-color), #059669);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: var(--shadow-xl);
+      animation: successPulse 2s ease-in-out infinite;
+    }
+
+    .success-animation i {
+      font-size: 3rem;
+      color: var(--white);
+    }
+
+    @keyframes successPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: var(--shadow-xl);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+      }
+    }
+
+    .success-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .success-section p {
+      font-size: 1.2rem;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+    }
+
+    .order-number {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 1rem 0;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--gray-900);
+      color: var(--white);
+      padding: 3rem 0 2rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .footer h3 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer p {
+      color: var(--gray-300);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .footer i {
+      color: var(--primary-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .confirmation-container {
+        padding: 2rem 1rem;
+      }
+
+      .success-section h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .confirmation-container {
+        padding: 1rem;
+      }
+
+      .success-section h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
+  <!-- Header -->
   <header class="header">
-    <div class="logo">☕ متجر الشاي الفاخر</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">الصفحة الرئيسية</a></li>
-        <li><a href="products.html">المنتجات</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <div class="logo">NOUJ STORE</div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="products.html">المنتجات</a></li>
+          <li><a href="cart.html">السلة</a></li>
+          <li><a href="about.html">من نحن</a></li>
+          <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="confirmation-section">
-    <h2>🎉 تم تأكيد طلبك بنجاح!</h2>
-    <p>شكرًا لتسوقك معنا ❤️</p>
-    <p>سيتم تجهيز طلبك وشحنه في أقرب وقت ممكن.</p>
-    <a href="index.html" class="btn">العودة للرئيسية</a>
-  </section>
+  <div class="confirmation-container">
+    <section class="success-section">
+      <div class="success-animation">
+        <i class="fas fa-check"></i>
+      </div>
+      <h1>تم تأكيد طلبك بنجاح! 🎉</h1>
+      <p>شكرًا لتسوقك معنا في NOUJ STORE ❤️</p>
+      <p>سيتم تجهيز طلبك وشحنه في أقرب وقت ممكن</p>
+      <div class="order-number" id="order-number">
+        <i class="fas fa-hashtag"></i>
+        رقم الطلب: <span id="order-num">NOUJ-2025-001</span>
+      </div>
+    </section>
+  </div>
 
-  <footer>
-    <p>© 2025 متجر الشاي الفاخر - جميع الحقوق محفوظة</p>
+  <footer class="footer">
+    <div class="footer-content">
+      <h3>جميع الحقوق محفوظة © 2025 - NOUJ STORE</h3>
+    </div>
   </footer>
-<script>
-    const trackingCode = localStorage.getItem("lastTracking");
-    if (trackingCode) {
-        const section = document.querySelector(".confirmation-section");
-        const p = document.createElement("p");
-        p.innerHTML = `📦 كود تتبع طلبك: <strong>${trackingCode}</strong>`;
-        section.appendChild(p);
-        localStorage.removeItem("lastTracking"); // نحذف الكود بعد عرضه
-    }
-</script>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>تم تأكيد الطلب</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <header class="header">
-    <div class="logo">☕ متجر الشاي الفاخر</div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">الصفحة الرئيسية</a></li>
-        <li><a href="products.html">المنتجات</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="confirmation-section">
-    <h2>🎉 تم تأكيد طلبك بنجاح!</h2>
-    <p>شكرًا لتسوقك معنا ❤️</p>
-    <p>سيتم تجهيز طلبك وشحنه في أقرب وقت ممكن.</p>
-    <a href="index.html" class="btn">العودة للرئيسية</a>
-  </section>
-
-  <footer>
-    <p>© 2025 متجر الشاي الفاخر - جميع الحقوق محفوظة</p>
-  </footer>
-<script>
-    const trackingCode = localStorage.getItem("lastTracking");
-    if (trackingCode) {
-        const section = document.querySelector(".confirmation-section");
-        const p = document.createElement("p");
-        p.innerHTML = `📦 كود تتبع طلبك: <strong>${trackingCode}</strong>`;
-        section.appendChild(p);
-        localStorage.removeItem("lastTracking"); // نحذف الكود بعد عرضه
-    }
-</script>
-
+  <script>
+    // Load order number from localStorage if available
+    document.addEventListener("DOMContentLoaded", function() {
+      const orderNumSpan = document.getElementById("order-num");
+      const orderData = JSON.parse(localStorage.getItem("orderData"));
+      if (orderData && orderData.orderNumber) {
+        orderNumSpan.textContent = orderData.orderNumber;
+      }
+    });
+  </script>
 </body>
 </html>
