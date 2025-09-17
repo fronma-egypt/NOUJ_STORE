@@ -1,0 +1,91 @@
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إتمام الطلب - NOUJ STORE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">NOUJ STORE</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="products.html">المنتجات</a></li>
+                <li><a href="cart.html">سلة المشتريات</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="checkout-container">
+        <h2>✅ إتمام الطلب</h2>
+        <form id="checkout-form">
+            <div class="form-group">
+                <label for="name">الاسم الكامل:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">عنوان الشحن:</label>
+                <textarea id="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="checkout-btn">✅ إتمام الطلب</button>
+            </div>
+        </form>
+        <div id="order-summary">
+            <h3>ملخص الطلب</h3>
+            <div id="cart-items-summary"></div>
+            <div class="total-section">
+                <span>💰 الإجمالي:</span>
+                <strong><span id="total-price-summary">0.00</span> جنيه</strong>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // Load cart items and total price for summary
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || {};
+            const cartItemsSummary = document.getElementById("cart-items-summary");
+            const totalPriceSummary = document.getElementById("total-price-summary");
+
+            let total = 0;
+            for (let id in cart) {
+                const item = cart[id];
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                cartItemsSummary.innerHTML += `
+                    <div class="cart-item-summary">
+                        <strong>${item.name}</strong> - ${item.quantity} × ${item.price} جنيه = ${itemTotal} جنيه
+                    </div>
+                `;
+            }
+
+            totalPriceSummary.textContent = total.toFixed(2);
+        });
+
+        // Handle form submission
+        document.getElementById("checkout-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("تم إتمام الطلب بنجاح! شكراً لك.");
+            // Here you can add further logic to process the order
+        });
+    </script>
+</body>
+</html>

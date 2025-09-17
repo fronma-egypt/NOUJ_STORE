@@ -1,0 +1,159 @@
+.item-info strong:first-child {
+  color: #6200ea; /* اسم المنتج بلون مميز */
+}
+
+.item-info small {
+  color: #555;
+  font-size: 14px;
+}
+
+.item-total {
+  color: #2e7d32; /* الأخضر = الإجمالي */
+  font-weight: bold;
+  font-size: 16px;
+  border-top: 1px dashed #ccc;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.item-thumb-container {
+  flex-shrink: 0;
+}
+
+.item-thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.item-thumb:hover {
+  transform: scale(1.05);
+}
+
+.item-info {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c2c54;
+  margin-bottom: 6px;
+}
+
+.item-unit,
+.item-price,
+.item-quantity,
+.item-discount {
+  font-size: 15px;
+  color: #555;
+}
+
+.item-discount {
+  color: #ff5722;
+  font-weight: 600;
+}
+
+.item-total {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+  border-top: 1px dashed #ccc;
+  padding-top: 6px;
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.remove-btn {
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+  background: linear-gradient(135deg, #ff1744, #d50000);
+  transform: scale(1.05);
+}
+
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: linear-gradient(135deg, #ff6f61, #ff3d00);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.item-details {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-details th {
+  text-align: right;
+  font-size: 15px;
+  color: #777;
+  padding: 4px 8px;
+}
+
+.item-details td {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+  padding: 4px 8px;
+}
+
+.item-details tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* ✨ Animation Fade In */
+.cart-item {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
