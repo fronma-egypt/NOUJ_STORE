@@ -1,140 +1,166 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const cartContainer = document.getElementById("cart-items");
-  const totalPriceEl = document.getElementById("total-price");
-  const toast = document.getElementById("toast-msg");
-  const cartCountEl = document.getElementById("cart-count");
+// Modern and Smart Cart JavaScript
 
-  const discountActive = true;
-  const discountPercentage = 10;
+document.addEventListener("DOMContentLoaded", () => {
+  const cartItemsContainer = document.getElementById("cart-items");
+  const emptyCartContainer = document.getElementById("empty-cart");
+  const cartCountElem = document.getElementById("cart-count");
+  const itemCountElem = document.getElementById("item-count");
+  const subtotalElem = document.getElementById("subtotal");
+  const discountElem = document.getElementById("discount");
+  const shippingCostElem = document.getElementById("shipping-cost");
+  const totalPriceElem = document.getElementById("total-price");
+  const checkoutBtn = document.getElementById("checkout-btn");
+  const toastContainer = document.getElementById("toast-container");
+  const loadingOverlay = document.getElementById("loading-overlay");
+
+  const DISCOUNT_RATE = 0.10;
+  const SHIPPING_BASE_COST = 10;
+  const SHIPPING_PER_KM = 4;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || {};
+
+  function showToast(message, type = "info") {
+    const toast = document.createElement("div");
+    toast.className = `toast show ${type}`;
+    toast.textContent = message;
+    toastContainer.appendChild(toast);
+    setTimeout(() => {
+      toast.classList.remove("show");
+      toast.remove();
+    }, 3000);
+  }
+
+  function updateCartCount() {
+    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
+    cartCountElem.textContent = totalItems;
+    itemCountElem.textContent = totalItems;
+    if (totalItems === 0) {
+      emptyCartContainer.classList.remove("hidden");
+      cartItemsContainer.classList.add("hidden");
+      checkoutBtn.disabled = true;
+    } else {
+      emptyCartContainer.classList.add("hidden");
+      cartItemsContainer.classList.remove("hidden");
+      checkoutBtn.disabled = false;
+    }
+  }
+
+  function calculateTotals() {
+    let subtotal = 0;
+    for (const id in cart) {
+      subtotal += cart[id].price * cart[id].quantity;
+    }
+    const discount = subtotal * DISCOUNT_RATE;
+    const shippingDistance = parseFloat(localStorage.getItem("shipping_distance")) || 0;
+    const shippingCost = shippingDistance <= 1 ? SHIPPING_BASE_COST : SHIPPING_BASE_COST + (shippingDistance - 1) * SHIPPING_PER_KM;
+    const total = subtotal - discount + shippingCost;
+    return { subtotal, discount, shippingCost, total };
+  }
+
+  function renderCartItems() {
+    cartItemsContainer.innerHTML = "";
+    for (const id in cart) {
+      const item = cart[id];
+      const itemTotal = (item.price * item.quantity).toFixed(2);
+
+      const cartItem = document.createElement("div");
+      cartItem.className = "cart-item";
+
+      cartItem.innerHTML = `
+        <div class="item-thumb-container">
+          <img src="${item.image || 'box2.png'}" alt="${item.name}" class="item-thumb" onerror="this.src='box2.png'">
+          ${item.discount ? `<div class="discount-badge">${item.discount}% خصم</div>` : ""}
+        </div>
+        <div class="item-info">
+          <h4 class="item-name">${item.name}</h4>
+          <table class="item-details">
+            <tbody>
+              <tr><th>الوحدة:</th><td>${item.unit || "قطعة"}</td></tr>
+              <tr><th>السعر:</th><td>${item.price.toFixed(2)} جنيه</td></tr>
+              <tr><th>الكمية:</th><td>${item.quantity}</td></tr>
+              <tr class="total-row"><th>الإجمالي:</th><td>${itemTotal} جنيه</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="item-actions">
+          <div class="quantity-controls">
+            <button class="qty-btn minus" data-id="${id}">➖</button>
+            <span class="qty-display">${item.quantity}</span>
+            <button class="qty-btn plus" data-id="${id}">➕</button>
+          </div>
+          <button class="remove-btn" data-id="${id}">❌ حذف</button>
+        </div>
+      `;
+
+      cartItemsContainer.appendChild(cartItem);
+    }
+  }
+
+  function updateTotalsUI() {
+    const totals = calculateTotals();
+    subtotalElem.textContent = totals.subtotal.toFixed(2);
+    discountElem.textContent = totals.discount.toFixed(2);
+    shippingCostElem.textContent = totals.shippingCost.toFixed(2);
+    totalPriceElem.textContent = totals.total.toFixed(2);
+  }
 
   function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  function showToast(message, type = "success") {
-    toast.textContent = message;
-    toast.className = "toast show " + type;
-    setTimeout(() => toast.classList.remove("show"), 3000);
-  }
-
-  function calculateTotals(cart) {
-    let total = 0;
-    for (let id in cart) {
-      total += cart[id].price * cart[id].quantity;
-    }
-
-    const discountAmount = discountActive ? total * discountPercentage / 100 : 0;
-    const finalTotal = total - discountAmount;
-
-    return { total, discountAmount, finalTotal };
-  }
-
-  function updateTotal() {
-    const totals = calculateTotals(cart);
-
-    if (totalPriceEl) totalPriceEl.textContent = totals.finalTotal.toFixed(2);
-
-    const original = document.getElementById("original-total");
-    const discount = document.getElementById("discount-amount");
-
-    if (original) original.textContent = totals.total.toFixed(2);
-    if (discount) discount.textContent = totals.discountAmount.toFixed(2);
-  }
-
-  function updateCartCount() {
-    if (!cartCountEl) return;
-    const count = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
-    cartCountEl.textContent = count;
-    cartCountEl.classList.add("bump");
-    setTimeout(() => cartCountEl.classList.remove("bump"), 300);
-  }
-
-  function renderCart() {
-    cartContainer.innerHTML = "";
-
-    if (Object.keys(cart).length === 0) {
-      cartContainer.innerHTML = `<p class="empty-message">🛒 السلة فارغة</p>`;
-      updateTotal();
-      updateCartCount();
-      return;
-    }
-
-    for (let id in cart) {
-      const item = cart[id];
-
-      const div = document.createElement("div");
-      div.className = "cart-item";
-      div.innerHTML = `
-        <div class="item-info">
-          <strong>${item.name}</strong><br>
-          <small>${item.price} جنيه × ${item.quantity}</small><br>
-          <strong>${(item.price * item.quantity).toFixed(2)} جنيه</strong>
-        </div>
-        <div class="item-actions">
-          <button onclick="changeQty('${id}', 1)">➕</button>
-          <span>${item.quantity}</span>
-          <button onclick="changeQty('${id}', -1)">➖</button>
-          <button class="remove-btn" onclick="removeItem('${id}')">❌</button>
-        </div>
-      `;
-      cartContainer.appendChild(div);
-    }
-
-    updateTotal();
-    updateCartCount();
-  }
-
-  window.changeQty = (id, delta) => {
+  function changeQuantity(id, delta) {
     if (!cart[id]) return;
-
     cart[id].quantity += delta;
-
-    if (cart[id].quantity <= 0) {
+    if (cart[id].quantity < 1) {
       delete cart[id];
-      showToast("🗑️ تم حذف المنتج", "error");
+      showToast("تم حذف المنتج من السلة", "info");
     } else {
-      showToast("✅ تم تعديل الكمية", "info");
+      showToast("تم تحديث الكمية", "success");
     }
-
     saveCart();
-    renderCart();
-  };
+    renderCartItems();
+    updateCartCount();
+    updateTotalsUI();
+  }
 
-  window.removeItem = (id) => {
-    if (confirm("هل تريد إزالة هذا المنتج؟")) {
-      delete cart[id];
-      saveCart();
-      renderCart();
-      showToast("❌ تم إزالة المنتج", "error");
-    }
-  };
+  function removeItem(id) {
+    if (!cart[id]) return;
+    delete cart[id];
+    saveCart();
+    renderCartItems();
+    updateCartCount();
+    updateTotalsUI();
+    showToast("تم حذف المنتج من السلة", "info");
+  }
 
-  window.goToCheckout = () => {
+  function goToCheckout() {
     if (Object.keys(cart).length === 0) {
-      alert("🛒 السلة فارغة!");
+      showToast("سلة المشتريات فارغة", "error");
       return;
     }
     window.location.href = "checkout.html";
-  };
+  }
 
-  renderCart();
+  // Event delegation for quantity buttons and remove buttons
+  cartItemsContainer.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target.classList.contains("qty-btn")) {
+      const id = target.getAttribute("data-id");
+      if (target.classList.contains("plus")) {
+        changeQuantity(id, 1);
+      } else if (target.classList.contains("minus")) {
+        changeQuantity(id, -1);
+      }
+    } else if (target.classList.contains("remove-btn")) {
+      const id = target.getAttribute("data-id");
+      removeItem(id);
+    }
+  });
+
+  checkoutBtn.addEventListener("click", goToCheckout);
+
+  // Initialize
+  renderCartItems();
+  updateCartCount();
+  updateTotalsUI();
 });
-div.innerHTML = `
-  <div class="item-info">
-    <img src="${item.image || 'default.jpg'}" class="item-thumb" alt="${item.name}">
-    <div class="item-details">
-      <h4>${item.name}</h4>
-      <p>السعر: <strong>${item.price} جنيه</strong></p>
-      <p>الكمية: <strong>${item.quantity}</strong></p>
-      <p class="item-total">الإجمالي: <strong>${item.price * item.quantity} جنيه</strong></p>
-    </div>
-  </div>
-  <div class="item-actions">
-    <button onclick="changeQty('${id}', 1)">➕</button>
-    <span>${item.quantity}</span>
-    <button onclick="changeQty('${id}', -1)">➖</button>
-    <button class="remove-btn" onclick="removeItem('${id}')">❌</button>
-  </div>
-`;

@@ -92,6 +92,12 @@ body {
   transform: scale(1.05);
 }
 
+/* ========== المنتجات ========== */
+  .products-container {
+  display: flex;
+  justify-content: center;
+}
+
 .product {
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(5px);
@@ -141,7 +147,7 @@ body {
   background: linear-gradient(45deg, #5000c0, #6200ea);
   color: #111;
   padding: 12px 25px;
-  font-size: 20px;
+  font-size: 10px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -380,9 +386,6 @@ body {
 .products-container {
   justify-items: center;  /* خلي كل عنصر يتوسّط داخل العمود */
   align-items: start;
-  padding: 20px 20px;
-  max-width: 1000px;
-  margin: 50px auto 50px; /* عشان ما تلزقش في الهيدر */
   text-align: center;
   
 }
@@ -429,9 +432,9 @@ body {
   grid-template-columns: repeat(3, 1fr); /* ثلاث منتجات في الصف */
   flex-wrap: wrap;
   align-items: start;
-  padding: 10px 10px;
   max-width: 1000px;
   text-align: center;
+    font-size: 15px;
 }
 
 .toast {
@@ -529,7 +532,6 @@ body {
 @media (max-width: 768px) {
   .checkout-wrapper {
     flex-direction: column;
-    gap: 20px;
   }
 
   .checkout-form, .invoice-box {
@@ -550,6 +552,11 @@ body {
     padding: 8px;
   }
 }
+/* ========== إعادة تعيين عامة ========== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Cairo', sans-serif;
   background-color: #dce8f8;
@@ -618,14 +625,6 @@ body {
   font-size: 24px;
 }
 
-/* ========== المنتجات ========== */
-.products-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
 
 .product {
   background: #ffffff;
@@ -672,6 +671,13 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
+
+/* ========== استجابة الموبايل ========== */
+@media (max-width: 768px) {
+  .products-container {
+    gap: 6px;
+  }
+
   .header {
     flex-direction: column;
     padding: 10px;
@@ -699,6 +705,7 @@ footer {
   .main-image img {
     width: 20%;
   }
+}
 
 /* ========== انيميشن إضافي ========== */
 @keyframes pulse {
@@ -706,6 +713,12 @@ footer {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+.products-container {
+  display: grid;
+  width: 100%;
+  margin: auto;
+}
+
 .product {
   background: #fff;
   padding: 20px;
@@ -730,12 +743,6 @@ body {
   align-items: center;
   /* padding: 0 20px; */
   /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); */
-}
-.products-container {
-  display: grid;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 .product {
   background: #ffffff;
@@ -771,35 +778,14 @@ body {
   align-items: center;
   gap: 20px;
 }
-.products-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 17px;
-  padding: 20px;
-  box-sizing: border-box;
-  max-width: 100%;
-}
 
-.product {
-  flex: 1 1 calc(30% - 10px); /* يعرض عنصرين في الصف على الموبايل */
-  max-width: 160px;
-  box-sizing: border-box;
-  padding: 8px;
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  text-align: center;
-}
 
-@media (min-width: 600px) {
-  .product {
-    flex: 1 1 calc(30% - 5px); /* 3 عناصر في الصف */
-  }
-}
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+}
+.products-container{display: grid;
+  gap: 2px;
 }

@@ -2,850 +2,213 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>الدفع - متجر نوج</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .checkout-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-
-    .checkout-header {
-      background: linear-gradient(135deg, #5000c0, #7000d0);
-      color: white;
-      padding: 30px;
-      text-align: center;
-      position: relative;
-    }
-
-    .checkout-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.3;
-    }
-
-    .checkout-header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .checkout-header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      position: relative;
-      z-index: 1;
-    }
-
-    .checkout-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 40px;
-      padding: 40px;
-    }
-
-    .checkout-form {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(80, 0, 192, 0.1);
-    }
-
-    .form-section {
-      margin-bottom: 30px;
-    }
-
-    .form-section h3 {
-      color: #5000c0;
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 15px 20px;
-      border: 2px solid #e1e5e9;
-      border-radius: 10px;
-      font-size: 16px;
-      font-family: 'Tajawal', sans-serif;
-      transition: all 0.3s ease;
-      background: #fafbfc;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #5000c0;
-      background: white;
-      box-shadow: 0 0 0 3px rgba(80, 0, 192, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .form-group input:valid {
-      border-color: #28a745;
-    }
-
-    .form-group .input-icon {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #999;
-      pointer-events: none;
-    }
-
-    .form-group input.has-icon {
-      padding-left: 50px;
-    }
-
-    .location-selector {
-      position: relative;
-    }
-
-    .location-info {
-      background: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      padding: 15px;
-      margin-top: 10px;
-      display: none;
-    }
-
-    .location-info.show {
-      display: block;
-      animation: slideDown 0.3s ease;
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .payment-info {
-      background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
-      border: 2px solid #28a745;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .payment-info::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #28a745;
-    }
-
-    .payment-info h4 {
-      color: #28a745;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .submit-btn {
-      background: linear-gradient(135deg, #5000c0, #7000d0);
-      color: white;
-      border: none;
-      padding: 18px 40px;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(80, 0, 192, 0.3);
-    }
-
-    .submit-btn:active {
-      transform: translateY(0);
-    }
-
-    .submit-btn.loading {
-      opacity: 0.8;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-
-    .submit-btn.loading::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      margin: -10px 0 0 -10px;
-      border: 2px solid transparent;
-      border-top: 2px solid white;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .invoice-box {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(80, 0, 192, 0.1);
-      position: sticky;
-      top: 20px;
-      height: fit-content;
-    }
-
-    .invoice-header {
-      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-      padding: 25px;
-      border-radius: 15px 15px 0 0;
-      border-bottom: 1px solid #dee2e6;
-    }
-
-    .invoice-header h2 {
-      color: #5000c0;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .invoice-content {
-      padding: 25px;
-    }
-
-    .invoice-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    .invoice-table th,
-    .invoice-table td {
-      padding: 12px;
-      text-align: right;
-      border-bottom: 1px solid #e9ecef;
-    }
-
-    .invoice-table th {
-      background: #f8f9fa;
-      font-weight: 600;
-      color: #495057;
-    }
-
-    .invoice-table .product-name {
-      font-weight: 500;
-      color: #333;
-    }
-
-    .invoice-table .quantity {
-      background: #e3f2fd;
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #1976d2;
-      display: inline-block;
-    }
-
-    .invoice-summary {
-      border-top: 2px solid #e9ecef;
-      padding-top: 20px;
-    }
-
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0;
-      font-size: 0.95rem;
-    }
-
-    .summary-row.total {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #5000c0;
-      border-top: 2px solid #5000c0;
-      padding-top: 15px;
-      margin-top: 10px;
-    }
-
-    .summary-row .label {
-      color: #666;
-    }
-
-    .summary-row .value {
-      font-weight: 600;
-      color: #333;
-    }
-
-    .summary-row.discount .value {
-      color: #28a745;
-    }
-
-    .summary-row.shipping .value {
-      color: #fd7e14;
-    }
-
-    .print-btn {
-      background: linear-gradient(135deg, #28a745, #20c997);
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .print-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-    }
-
-    .empty-cart {
-      text-align: center;
-      padding: 40px;
-      color: #666;
-    }
-
-    .empty-cart i {
-      font-size: 4rem;
-      color: #ddd;
-      margin-bottom: 20px;
-    }
-
-    .progress-bar {
-      background: #e9ecef;
-      height: 4px;
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 30px;
-    }
-
-    .progress-fill {
-      background: linear-gradient(90deg, #5000c0, #7000d0);
-      height: 100%;
-      width: 75%;
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-
-    .toast {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #28a745;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      transform: translateX(400px);
-      transition: transform 0.3s ease;
-      z-index: 1000;
-    }
-
-    .toast.show {
-      transform: translateX(0);
-    }
-
-    .toast.error {
-      background: #dc3545;
-    }
-
-    @media (max-width: 1024px) {
-      .checkout-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      
-      .invoice-box {
-        position: static;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-      
-      .checkout-header {
-        padding: 20px;
-      }
-      
-      .checkout-header h1 {
-        font-size: 2rem;
-      }
-      
-      .checkout-wrapper {
-        padding: 20px;
-        gap: 20px;
-      }
-      
-      .checkout-form,
-      .invoice-content {
-        padding: 25px;
-      }
-    }
-  </style>
+  <title>الدفع والتأكيد - متجر نوج</title>
+  <link rel="stylesheet" href="checkout.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
- <form id="checkout-form" action="https://formspree.io/f/xjkrapjw" method="POST">
-  <input type="text" id="name" name="الاسم الكامل" required>
-  <input type="email" id="email" name="البريد الإلكتروني">
-  <input type="text" id="phone" name="رقم الهاتف" required>
-  <input type="text" id="address" name="العنوان" required>
-  <textarea name="تفاصيل الطلب" id="orderDetails" readonly></textarea>
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <button type="submit">أتمام الطلب ✅</button>
-</form>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">NOUJ STORE</div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="products.html">المنتجات</a></li>
+        <li><a href="cart.html">السلة <span id="cart-count" class="cart-count">0</span></a></li>
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="contact.html">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </header>
 
-
-<div class="checkout-container">
-  <!-- رأس الصفحة -->
-  <div class="checkout-header">
-    <h1><i class="fas fa-shopping-cart"></i> إتمام الطلب</h1>
-    <p>أكمل بياناتك لإتمام عملية الشراء بأمان</p>
-  </div>
-
-  <!-- شريط التقدم -->
-  <div class="progress-bar">
-    <div class="progress-fill"></div>
-  </div>
-
-  <div class="checkout-wrapper">
-    <!-- نموذج الطلب -->
-    <div class="checkout-form">
-      <form id="checkout-form">
-        <!-- بيانات العميل -->
-        <div class="form-section">
-          <h3><i class="fas fa-user"></i> بيانات العميل</h3>
-          
-          <div class="form-group">
-            <label for="name">الاسم الكامل *</label>
-            <div style="position: relative;">
-              <i class="fas fa-user input-icon"></i>
-              <input type="text" id="name" name="name" class="has-icon" placeholder="أدخل اسمك الكامل" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="email">البريد الإلكتروني</label>
-            <div style="position: relative;">
-              <i class="fas fa-envelope input-icon"></i>
-              <input type="email" id="email" name="email" class="has-icon" placeholder="أدخل بريدك الإلكتروني">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">رقم الهاتف *</label>
-            <div style="position: relative;">
-              <i class="fas fa-phone input-icon"></i>
-              <input type="text" id="phone" name="phone" class="has-icon" placeholder="أدخل رقم هاتفك" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="address">العنوان بالتفصيل *</label>
-            <div style="position: relative;">
-              <i class="fas fa-map-marker-alt input-icon"></i>
-              <input type="text" id="address" name="address" class="has-icon" placeholder="أدخل عنوانك بالتفصيل" required>
-            </div>
-          </div>
-        </div>
-
-        <!-- بيانات الشحن -->
-        <div class="form-section">
-          <h3><i class="fas fa-truck"></i> بيانات الشحن</h3>
-          
-          <div class="form-group">
-            <label for="locationSelect">اختر منطقتك:</label>
-            <select id="locationSelect">
-              <option value="">-- اختر --</option>
-              <option value="30.0444,31.2357">الدقي</option>
-              <option value="30.0566,31.2394">وسط البلد</option>
-              <option value="30.0609,31.2197">الزمالك</option>
-              <option value="29.9650,31.2750">ش ابو بريك</option>
-              <option value="29.9680,31.2720">ش النصر</option>
-              <option value="29.9700,31.2730">منطقة عمارة البرج</option>
-              <option value="29.9720,31.2760">ش اللاسيلكى</option>
-              <option value="29.9730,31.2770">منطقة عمارات اللاسيلكى</option>
-              <option value="29.9740,31.2780">مشتشفى تبارك</option>
-              <option value="29.9750,31.2790">ش البحث الجنائى</option>
-              <option value="29.9760,31.2800">ش المطعم السورى</option>
-              <option value="29.9770,31.2810">ميدان صقر قريش</option>
-              <option value="29.9780,31.2820">منطقة الميكانيكة</option>
-              <option value="29.9790,31.2830">ش مركز شباب البساتين</option>
-              <option value="29.9800,31.2840">منطقة عماراة الالنيابة</option>
-              <option value="29.9810,31.2850">ش مستشفى اليوم الواحد</option>
-              <option value="29.9820,31.2860">م الجزائر</option>
-              <option value="29.9830,31.2870">ش نور الدين</option>
-              <option value="29.9840,31.2880">ش عبد المنعم رياض</option>
-              <option value="29.9850,31.2890">ميدان فونتانا</option>
-              <option value="29.9860,31.2900">جراند مول</option>
-              <option value="29.9870,31.2910">منطقة فكتوريا</option>
-              <option value="30.0300,31.2200">منطقة دجلة</option>
-              <option value="29.9890,31.2930">ش 233</option>
-              <option value="29.9900,31.2940">نيركو</option>
-              <option value="29.9910,31.2950">ش الزهراء</option>
-              <option value="29.9920,31.2960">المجمع التجارى</option>
-              <option value="29.9930,31.2970">ش ال 50 امامى وخلفى</option>
-              <option value="29.9940,31.2980">منطقة خلف ش 90</option>
-              <option value="29.9950,31.2990">منطقة بيتشو</option>
-              <option value="29.9960,31.3000">ش التجارى تبارك</option>
-              <option value="29.9970,31.3010">ش السعادة</option>
-              <option value="29.9980,31.3020">ش كارفور</option>
-              <option value="29.9990,31.3030">منطقة المعراج العلوى والسفلى</option>
-              <option value="30.0000,31.3040">ش على عبد العزيز</option>
-              <option value="30.0010,31.3050">ميدان ابو عبدة</option>
-              <option value="30.0020,31.3060">ارض البصرى</option>
-              <option value="30.0030,31.3070">ش احمد زكى</option>
-              <option value="30.0040,31.3080">ش حسنين دسوقى</option>
-              <option value="30.0050,31.3090">ش 9 ب</option>
-              <option value="30.0060,31.3100">ش 9</option>
-              <option value="29.9600,31.2500">ثكنات المعادى</option>
-              <option value="29.9610,31.2510">ميدان الحرية</option>
-              <option value="29.9620,31.2520">ش 105 ميدان الاتحاد</option>
-              <option value="29.9630,31.2530">ش 77 جامع العرب</option>
-              <option value="29.9640,31.2540">ش الملاعب</option>
-              <option value="29.9650,31.2550">ش عزبة الورد</option>
-              <option value="29.9660,31.2560">ش البساتين</option>
-              <option value="29.9670,31.2570">شركة الكهرباء</option>
-              <option value="29.9680,31.2580">سوق مزرعة البط</option>
-              <option value="29.9690,31.2590">ش مزرعة البط</option>
-              <option value="29.9700,31.2600">ش الملف</option>
-              <option value="29.9710,31.2610">ش سوق دار السلام</option>
-              <option value="29.9720,31.2620">الطريق الزراعى</option>
-              <option value="29.9730,31.2630">موقف المطبعة</option>
-              <option value="29.9740,31.2640">اكادمية السادات</option>
-              <option value="29.9750,31.2650">م عمارة حسين صدقى</option>
-              <option value="29.9760,31.2660">مستشفى الفاروق</option>
-              <option value="29.9770,31.2670">مبرة المعادى</option>
-              <option value="29.9780,31.2680">ش 7</option>
-              <option value="30.0286,31.3273">المقطم</option>
-              <option value="30.0511,31.3656">مدينة نصر</option>
-              <option value="30.0059,31.2290">مصر القديمه</option>
-              <option value="30.0286,31.2267">المنيل</option>
-              <option value="29.9000,31.3000">المعصرة</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- طريقة الدفع -->
-        <div class="form-section">
-          <h3><i class="fas fa-credit-card"></i> طريقة الدفع</h3>
-          
-          <div class="form-group">
-            <label for="payment-method">اختر طريقة الدفع:</label>
-            <select id="payment-method">
-              <option value="cod">الدفع عند الاستلام فقط</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- زر الإرسال -->
-        <div class="form-section">
-          <button type="submit" class="submit-btn">أتمام الطلب ✅</button>
-        </div>
-      </form>
+  <div class="checkout-container">
+    <div class="checkout-header">
+      <h1><i class="fas fa-shopping-cart"></i> إتمام الطلب</h1>
+      <p>يرجى مراجعة طلبك وإدخال بيانات التوصيل</p>
     </div>
 
-    <!-- الفاتورة -->
-    <div class="invoice-box">
-      <div class="invoice-header">
-        <h2>🧾 الفاتورة</h2>
-      </div>
-      <div class="invoice-content">
-        <div id="invoice">
-          <!-- سيتم ملء الفاتورة بواسطة JavaScript -->
+    <div class="checkout-wrapper">
+      <!-- نموذج الطلب -->
+      <div class="checkout-form-section">
+        <div class="form-card">
+          <div class="form-header">
+            <i class="fas fa-user"></i>
+            <h2>بيانات التوصيل</h2>
+          </div>
+
+          <form id="checkout-form" class="checkout-form">
+            <div class="form-group">
+              <label for="name">
+                <i class="fas fa-user"></i> الاسم الكامل
+              </label>
+              <input type="text" id="name" name="name" placeholder="أدخل اسمك الكامل" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">
+                <i class="fas fa-envelope"></i> البريد الإلكتروني
+              </label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">
+                <i class="fas fa-phone"></i> رقم الهاتف
+              </label>
+              <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+              <label for="address">
+                <i class="fas fa-map-marker-alt"></i> العنوان بالتفصيل
+              </label>
+              <textarea id="address" name="address" placeholder="المحافظة، المنطقة، الشارع، رقم المبنى..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="locationSelect">
+                <i class="fas fa-map-pin"></i> اختر منطقتك
+              </label>
+              <select id="locationSelect" name="location">
+                <option value="">-- اختر منطقتك --</option>
+                <option value="30.0444,31.2357">الدقي</option>
+                <option value="30.0566,31.2394">وسط البلد</option>
+                <option value="30.0609,31.2197">الزمالك</option>
+                <option value="29.9650,31.2750">ش ابو بريك</option>
+                <option value="29.9680,31.2720">ش النصر</option>
+                <option value="29.9700,31.2730">منطقة عمارة البرج</option>
+                <option value="29.9720,31.2760">ش اللاسيلكى</option>
+                <option value="29.9730,31.2770">منطقة عمارات اللاسيلكى</option>
+                <option value="29.9740,31.2780">مشتشفى تبارك</option>
+                <option value="29.9750,31.2790">ش البحث الجنائى</option>
+                <option value="29.9760,31.2800">ش المطعم السورى</option>
+                <option value="29.9770,31.2810">ميدان صقر قريش</option>
+                <option value="29.9780,31.2820">منطقة الميكانيكة</option>
+                <option value="29.9790,31.2830">ش مركز شباب البساتين</option>
+                <option value="29.9800,31.2840">منطقة عماراة الالنيابة</option>
+                <option value="29.9810,31.2850">ش مستشفى اليوم الواحد</option>
+                <option value="29.9820,31.2860">م الجزائر</option>
+                <option value="29.9830,31.2870">ش نور الدين</option>
+                <option value="29.9840,31.2880">ش عبد المنعم رياض</option>
+                <option value="29.9850,31.2890">ميدان فونتانا</option>
+                <option value="29.9860,31.2900">جراند مول</option>
+                <option value="29.9870,31.2910">منطقة فكتوريا</option>
+                <option value="30.0300,31.2200">منطقة دجلة</option>
+                <option value="29.9890,31.2930">ش 233</option>
+                <option value="29.9900,31.2940">نيركو</option>
+                <option value="29.9910,31.2950">ش الزهراء</option>
+                <option value="29.9920,31.2960">المجمع التجارى</option>
+                <option value="29.9930,31.2970">ش ال 50 امامى وخلفى</option>
+                <option value="29.9940,31.2980">منطقة خلف ش 90</option>
+                <option value="29.9950,31.2990">منطقة بيتشو</option>
+                <option value="29.9960,31.3000">ش التجارى تبارك</option>
+                <option value="29.9970,31.3010">ش السعادة</option>
+                <option value="29.9980,31.3020">ش كارفور</option>
+                <option value="29.9990,31.3030">منطقة المعراج العلوى والسفلى</option>
+                <option value="30.0000,31.3040">ش على عبد العزيز</option>
+                <option value="30.0010,31.3050">ميدان ابو عبدة</option>
+                <option value="30.0020,31.3060">ارض البصرى</option>
+                <option value="30.0030,31.3070">ش احمد زكى</option>
+                <option value="30.0040,31.3080">ش حسنين دسوقى</option>
+                <option value="30.0050,31.3090">ش 9 ب</option>
+                <option value="30.0060,31.3100">ش 9</option>
+                <option value="29.9600,31.2500">ثكنات المعادى</option>
+                <option value="29.9610,31.2510">ميدان الحرية</option>
+                <option value="29.9620,31.2520">ش 105 ميدان الاتحاد</option>
+                <option value="29.9630,31.2530">ش 77 جامع العرب</option>
+                <option value="29.9640,31.2540">ش الملاعب</option>
+                <option value="29.9650,31.2550">ش عزبة الورد</option>
+                <option value="29.9660,31.2560">ش البساتين</option>
+                <option value="29.9670,31.2570">شركة الكهرباء</option>
+                <option value="29.9680,31.2580">سوق مزرعة البط</option>
+                <option value="29.9690,31.2590">ش مزرعة البط</option>
+                <option value="29.9700,31.2600">ش الملف</option>
+                <option value="29.9710,31.2610">ش سوق دار السلام</option>
+                <option value="29.9720,31.2620">الطريق الزراعى</option>
+                <option value="29.9730,31.2630">موقف المطبعة</option>
+                <option value="29.9740,31.2640">اكادمية السادات</option>
+                <option value="29.9750,31.2650">م عمارة حسين صدقى</option>
+                <option value="29.9760,31.2660">مستشفى الفاروق</option>
+                <option value="29.9770,31.2670">مبرة المعادى</option>
+                <option value="29.9780,31.2680">ش 7</option>
+                <option value="30.0286,31.3273">المقطم</option>
+                <option value="30.0511,31.3656">مدينة نصر</option>
+                <option value="30.0059,31.2290">مصر القديمه</option>
+                <option value="30.0286,31.2267">المنيل</option>
+                <option value="29.9000,31.3000">المعصرة</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="payment-method">
+                <i class="fas fa-credit-card"></i> طريقة الدفع
+              </label>
+              <select id="payment-method" name="payment-method" required>
+                <option value="cod">💵 الدفع عند الاستلام</option>
+                <option value="card">💳 بطاقة ائتمان</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">
+                <i class="fas fa-sticky-note"></i> ملاحظات إضافية (اختياري)
+              </label>
+              <textarea id="notes" name="notes" placeholder="أي ملاحظات خاصة بالطلب..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-check"></i> تأكيد الطلب
+            </button>
+          </form>
         </div>
-        <button class="print-btn" onclick="window.print()">🖨️ طباعة الفاتورة</button>
+      </div>
+
+      <!-- الفاتورة -->
+      <div class="invoice-section">
+        <div class="invoice-card">
+          <div class="invoice-header">
+            <i class="fas fa-receipt"></i>
+            <h2>تفاصيل الطلب</h2>
+          </div>
+
+          <div id="invoice-content">
+            <!-- سيتم إنشاؤها ديناميكياً -->
+          </div>
+
+          <div class="invoice-actions">
+            <button class="print-btn" onclick="window.print()">
+              <i class="fas fa-print"></i> طباعة الفاتورة
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- تضمين المكتبات الخارجية -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<!-- سكريبت الصفحة -->
-<script>
-  // تهيئة خدمة البريد الإلكتروني
-  emailjs.init("UPtxd1MC2SrpDzWal");
-
-  // ثوابت الحساب
-  const vatRate = 0.0;
-  const discountRate = 0.1;
-  const storeCoords = [29.97325, 31.26739]; // موقع المتجر
-
-  // استرجاع بيانات السلة - إضافة بيانات اختبارية إذا كانت السلة فارغة
-  let cart = JSON.parse(localStorage.getItem("cart")) || {};
-  
-  // للاختبار: إذا كانت السلة فارغة، أضف بعض المنتجات للعرض
-  if (Object.keys(cart).length === 0) {
-    console.log("السلة فارغة، إضافة بيانات اختبارية");
-    cart = {
-      "1": { id: "1", name: "منتج تجريبي 1", price: 100, quantity: 2 },
-      "2": { id: "2", name: "منتج تجريبي 2", price: 150, quantity: 1 }
-    };
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-
-  // دالة حساب تكلفة الشحن
-  function calculateShippingCost(km) {
-    if (km <= 1) return 10;
-    return 10 + (km - 1) * 4;
-  }
-
-  // دالة حساب المسافة بين نقطتين (إحداثيات GPS) بالكيلومتر
-  function haversineDistance(coords1, coords2) {
-    if (!coords1 || !coords2 || coords1.length !== 2 || coords2.length !== 2) {
-      return 0;
-    }
-    
-    const [lat1, lon1] = coords1;
-    const [lat2, lon2] = coords2;
-    
-    const toRad = angle => angle * Math.PI / 180;
-    const R = 6371; // نصف قطر الأرض بالكيلومتر
-
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-
-    const a =
-      Math.sin(dLat / 2) ** 2 +
-      Math.cos(toRad(lat1)) *
-        Math.cos(toRad(lat2)) *
-        Math.sin(dLon / 2) ** 2;
-
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
-  }
-
-  // دالة عرض الفاتورة
-  function renderInvoice() {
-    const invoiceEl = document.getElementById("invoice");
-    
-    if (!invoiceEl) {
-      console.error("لم يتم العثور على عنصر الفاتورة!");
-      return;
-    }
-    
-    if (Object.keys(cart).length === 0) {
-      invoiceEl.innerHTML = "<p>السلة فارغة.</p>";
-      return;
-    }
-
-    let subtotal = 0;
-    let rows = "";
-
-    for (let id in cart) {
-      const item = cart[id];
-      const totalItem = item.quantity * item.price;
-      subtotal += totalItem;
-
-      rows += `
-        <tr>
-          <td>${item.name}</td>
-          <td>${item.quantity}</td>
-          <td>${totalItem.toFixed(2)} ج</td>
-        </tr>`;
-    }
-
-    const discount = subtotal * discountRate;
-    const vat = (subtotal - discount) * vatRate;
-
-    // احسب الشحن من قيمة محفوظة في localStorage
-    const distance = parseFloat(localStorage.getItem("distance_km") || "0");
-    const shippingCost = calculateShippingCost(distance);
-
-    const total = subtotal - discount + vat + shippingCost;
-    localStorage.setItem("checkoutTotal", total.toFixed(2));
-
-    invoiceEl.innerHTML = `
-      <table>
-        <thead>
-          <tr><th>المنتج</th><th>الكمية</th><th>السعر</th></tr>
-        </thead>
-        <tbody>${rows}</tbody>
-      </table>
-      <div class="summary">
-        <p>💵 المبلغ: ${subtotal.toFixed(2)} ج</p>
-        <p>🎁 الخصم (${discountRate * 100}%): ${discount.toFixed(2)} ج</p>
-        <p>🧾 ضريبة القيمة المضافة (${vatRate * 100}%): ${vat.toFixed(2)} ج</p>
-        <p>🚚 تكلفة الشحن (${distance} كم): ${shippingCost.toFixed(2)} ج</p>
-        <hr>
-        <p>💰 الإجمالي: ${total.toFixed(2)} ج</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>NOUJ STORE</h3>
+        <p>متجرك المفضل لأجود أنواع الشاي الطبيعي</p>
       </div>
-    `;
-  }
+      <div class="footer-section">
+        <h3>تواصل معنا</h3>
+        <p><i class="fas fa-phone"></i> 01234567890</p>
+        <p><i class="fas fa-envelope"></i> info@nouj.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>جميع الحقوق محفوظة © 2025 - NOUJ STORE</h3>
+      </div>
+    </div>
+  </footer>
 
-  // استمع لتغييرات في اختيار الموقع
-  document.getElementById("locationSelect").addEventListener("change", function() {
-    const selectedValue = this.value;
-    
-    if (selectedValue.includes(",")) {
-      // إذا كانت القيمة تحتوي على فاصلة، فهي إحداثيات
-      const coords = selectedValue.split(",").map(Number);
-      const distance = haversineDistance(storeCoords, coords);
-      localStorage.setItem("distance_km", distance.toFixed(2));
-    } else {
-      // إذا كانت القيمة نصية (اسم منطقة)، نستخدم مسافة افتراضية
-      localStorage.setItem("distance_km", "5.00");
-    }
-    
-    // تحديث الفاتورة بعد تغيير الموقع
-    renderInvoice();
-  });
-
-  // تعديل معالج تقديم النموذج
-  document.getElementById("checkout-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    
-
-
-    alert("✅ تم استلام طلبك بنجاح!");
-    
-
-
-    // جرب هذه الطرق المختلفة للتوجيه:
-    
-
-
-
-    // الطريقة الأولى
-    window.location.href = "/";
-    
-    // إذا لم تعمل، جرب الطريقة الثانية
-    // window.location.replace("/");
-    
-    // إذا لم تعمل، جرب الطريقة الثالثة
-    // window.location = "/";
-    
-    // إذا لم تعمل، جرب الطريقة الرابعة
-    // location.href = "/";
-  });  // عرض الفاتورة عند تحميل الصفحة
-  document.addEventListener("DOMContentLoaded", function() {
-    // تعيين مسافة افتراضية إذا لم تكن موجودة
-    if (!localStorage.getItem("distance_km")) {
-      localStorage.setItem("distance_km", "0.00");
-    }
-    
-    renderInvoice();
-  });
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-document.getElementById("checkout-form").addEventListener("submit", function (e) {
-  // حذف preventDefault (علشان النموذج يتبعت فعليًا)
-  
-  const cart = JSON.parse(localStorage.getItem("cart")) || {};
-  const distance = localStorage.getItem("distance_km") || "0";
-  const total = localStorage.getItem("checkoutTotal") || "0";
-
-  let details = "";
-  for (let id in cart) {
-    const item = cart[id];
-    details += `• ${item.name} × ${item.quantity} = ${item.price * item.quantity} ج\n`;
-  }
-
-  details += `\n🚚 تكلفة الشحن: ${distance} كم\n💰 الإجمالي: ${total} ج`;
-
-  document.getElementById("orderDetails").value = details;
-});
+  <!-- Scripts -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="checkout.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>
