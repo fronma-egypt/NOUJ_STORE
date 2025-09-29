@@ -60,7 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Redirect after delay
     setTimeout(() => {
-      window.location.href = "order-confirmation.html";
+      if (orderData.paymentMethod === "card" || orderData.paymentMethod === "credit_card" || orderData.paymentMethod === "بطاقة ائتمان") {
+        // Redirect to Paymob payment page
+        window.location.href = "paymob.html";
+      } else {
+        window.location.href = "order-confirmation.html";
+      }
     }, 2000);
   }
 

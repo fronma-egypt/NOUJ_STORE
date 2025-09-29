@@ -34,8 +34,8 @@
 
 body {
   font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, var(--light-bg) 0%, #e2e8f0 100%);
-  color: var(--gray-800);
+  background: linear-gradient(135deg, var(--light-bg) 0%, #dce9fa 100%);
+  color: var(--black-800);
   line-height: 1.6;
   min-height: 100vh;
   padding-top: 80px;
@@ -47,7 +47,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: var(--white);
+  background: var(--black);
   box-shadow: var(--shadow-md);
   z-index: 1000;
   padding: 1rem 0;
