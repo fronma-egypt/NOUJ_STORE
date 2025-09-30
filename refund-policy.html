@@ -1,185 +1,320 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الاسترداد - NOUJ STORE</title>
-    <meta name="description" content="سياسة الاسترداد والإرجاع في متجر NOUJ STORE">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    <style>
+ <style>
         body {
             font-family: 'Cairo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .corporate-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .corporate-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .corporate-header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: -20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .policy-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f9f9f9;
+        .document-header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
         
-        .policy-section h2 {
-            color: #2c2c54;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .policy-section h3 {
-            color: #764ba2;
-            margin-top: 20px;
-        }
-        
-        .policy-section ul {
-            padding-right: 20px;
-        }
-        
-        .policy-section li {
+        .document-header h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
             margin-bottom: 10px;
         }
         
-        .header, .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .document-header .version {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid #ecf0f1;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .policy-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .policy-section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .policy-section ul {
+            padding-right: 25px;
+        }
+        
+        .policy-section li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .policy-section li::marker {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .shipping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .shipping-table th, .shipping-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        .shipping-table th {
+            background: #f2f2f2;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border-left: 5px solid #17a2b8;
             padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .corporate-footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
+            margin-top: 40px;
+        }
+        
+        .corporate-footer h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
         }
         
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
-            color: #ffeaa7;
+            color: #ecf0f1;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         
         .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
             color: white;
         }
         
         .contact-info {
-            background: #e8f5e8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
             text-align: center;
+            color: white;
         }
         
         .contact-info h3 {
-            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+        
+        .signature-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .signature-section p {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .corporate-header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                margin: 0 10px;
+                padding: 20px 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
         }
     </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <h1>NOUJ STORE</h1>
-        <nav class="nav-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="products.html">المنتجات</a>
-            <a href="cart.html">السلة</a>
-            <a href="contact.html">اتصل بنا</a>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <h1 style="text-align: center; color: #2c2c54; margin-bottom: 30px;">سياسة الاسترداد</h1>
-        
-        <div class="policy-section">
-            <h2>نظرة عامة</h2>
-            <p>في NOUJ STORE، نحن ملتزمون بتقديم خدمة عملاء ممتازة. سياسة الاسترداد الخاصة بنا تهدف إلى ضمان رضاكم الكامل. يمكنكم طلب استرداد للمنتجات المؤهلة خلال <strong>7 أيام</strong> من تاريخ الاستلام، وفقاً للشروط المحددة أدناه.</p>
-            <p>جميع الاستردادات تتم بالجنيه المصري (EGP) إلى طريقة الدفع الأصلية.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>الشروط المؤهلة للاسترداد</h2>
+<li>Vodafone Cash، Etisalat Cash، Orange Money</li>
+                <li>مدة المعالجة: 1-3 أيام عمل</li>
+                <li>يتم إرسال إشعار تأكيد عبر الرسائل النصية</li>
+            </ul>
+            
+            <h3>الدفع عند الاستلام:</h3>
             <ul>
-                <li>يجب أن تكون المنتجات غير مفتوحة، غير مستخدمة، وفي حالتها الأصلية مع التغليف الأصلي.</li>
-                <li>يجب تقديم فاتورة الشراء أو رقم الطلب.</li>
-                <li>المنتجات القابلة للتلف (مثل الشاي) يجب أن تكون غير مفتوحة تماماً لأسباب صحية ونظافة.</li>
-                <li>الاسترداد متاح للمنتجات التالفة أو الخاطئة المرسلة من جانبنا.</li>
-                <li>لا يتم استرداد تكاليف الشحن الأصلية، ما عدا في حالات الخطأ من جانبنا.</li>
+                <li>استرداد نقدي عند استلام المنتج المُرجع</li>
+                <li>تحويل بنكي إلى حساب العميل</li>
+                <li>إيداع في محفظة إلكترونية</li>
             </ul>
         </div>
 
         <div class="policy-section">
-            <h2>عملية طلب الاسترداد</h2>
-            <ol>
-                <li><strong>التواصل مع الدعم:</strong> أرسلوا بريداً إلكترونياً إلى support@noujstore.com أو اتصلوا على +20 2 12345678 مع تفاصيل الطلب ورقم الإرجاع المطلوب.</li>
-                <li><strong>الحصول على الموافقة:</strong> سنقوم بمراجعة طلبكم وإرسال تعليمات الإرجاع خلال 24 ساعة.</li>
-                <li><strong>إرسال المنتج:</strong> أرسلوا المنتجات إلى عنواننا في دقي، الجيزة، مصر (سنقدم العنوان الدقيق).</li>
-                <li><strong>الفحص والمعالجة:</strong> بعد استلام المنتجات وفحصها (خلال 3-5 أيام)، سنقوم بمعالجة الاسترداد.</li>
-                <li><strong>استلام الاسترداد:</strong> سيتم إيداع المبلغ في حسابكم البنكي أو بطاقتكم خلال 5-10 أيام عمل.</li>
-            </ol>
-            <p><strong>ملاحظة هامة:</strong> تتحملون تكاليف الشحن للإرجاع، ما عدا إذا كان الاسترداد بسبب خطأ من جانبنا (مثل إرسال منتج خاطئ).</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>الاستثناءات من الاسترداد</h2>
+            <h2>6. الاستثناءات والقيود</h2>
+            <h3>المنتجات غير القابلة للاسترداد:</h3>
             <ul>
-                <li>المنتجات المفتوحة أو المستخدمة، خاصة المنتجات الغذائية.</li>
-                <li>المنتجات التالفة بسبب سوء الاستخدام أو عدم الالتزام بتعليمات التخزين.</li>
-                <li>المنتجات المخصصة أو المطبوعة حسب الطلب.</li>
-                <li>الطلبات التي تم إلغاؤها بعد الشحن.</li>
-                <li>المنتجات ذات القيمة المنخفضة (أقل من 50 جنيه مصري).</li>
+                <li>المنتجات الغذائية المفتوحة أو المستهلكة جزئياً</li>
+                <li>المنتجات التالفة بسبب سوء الاستخدام أو التخزين</li>
+                <li>المنتجات المخصصة أو المطبوعة حسب الطلب</li>
+                <li>المنتجات ذات القيمة المنخفضة (أقل من 100 جنيه مصري)</li>
+                <li>المنتجات المستخدمة في العروض والتخفيضات الخاصة</li>
+            </ul>
+            
+            <h3>القيود الزمنية:</h3>
+            <ul>
+                <li>انتهاء فترة السماح المحددة</li>
+                <li>الطلبات التي تم إلغاؤها بعد الشحن</li>
+                <li>المنتجات المفقودة أثناء الإرجاع</li>
             </ul>
         </div>
 
         <div class="policy-section">
-            <h2>الاسترداد للدفع عند الاستلام</h2>
-            <p>إذا تم الدفع عند الاستلام، يمكن استرداد المبلغ نقداً عند استلام المنتج المُرجَع، أو عبر تحويل بنكي إلى حسابكم. يرجى تقديم تفاصيل الحساب البنكي عند طلب الاسترداد.</p>
+            <h2>7. تكاليف الاسترداد</h2>
+            <h3>تكاليف يتحملها العميل:</h3>
+            <ul>
+                <li>تكاليف الشحن الأصلية (غير مستردة)</li>
+                <li>تكاليف إرجاع المنتج في الحالات العادية</li>
+                <li>أي رسوم بنكية إضافية</li>
+            </ul>
+            
+            <h3>تكاليف تتحملها الشركة:</h3>
+            <ul>
+                <li>جميع التكاليف في حالات الخطأ من جانبنا</li>
+                <li>تكاليف الشحن للمنتجات التالفة أو الخاطئة</li>
+                <li>تكاليف الفحص والإصلاح</li>
+            </ul>
         </div>
 
         <div class="policy-section">
-            <h2>الاسترداد للدفع بالبطاقة الائتمانية</h2>
-            <p>سيتم إرجاع المبلغ إلى البطاقة الأصلية المستخدمة في الدفع. قد يستغرق الأمر 5-10 أيام عمل للظهور في كشف الحساب، حسب سياسة البنك.</p>
+            <h2>8. إجراءات الشكاوى والنزاعات</h2>
+            <ul>
+                <li>يمكن تقديم شكوى عبر خدمة العملاء خلال 30 يوماً من رفض الاسترداد</li>
+                <li>فريق متخصص لمراجعة الحالات المعقدة</li>
+                <li>إمكانية التصعيد إلى مدير الخدمة</li>
+                <li>الالتزام بحل النزاعات ودياً قبل اللجوء للجهات الرسمية</li>
+                <li>الامتثال لقانون حماية المستهلك المصري</li>
+            </ul>
         </div>
 
         <div class="policy-section">
-            <h2>الأسئلة الشائعة</h2>
+            <h2>9. الأسئلة الشائعة</h2>
             <h3>كم من الوقت يستغرق معالجة الاسترداد؟</h3>
-            <p>بعد استلام المنتج وفحصه، يستغرق المعالجة 3-5 أيام، ثم 5-10 أيام للإيداع.</p>
+            <p>بعد استلام وفحص المنتج: 3-5 أيام عمل، ثم 5-10 أيام للإيداع حسب طريقة الدفع.</p>
             
-            <h3>هل يتم استرداد تكاليف الشحن؟</h3>
-            <p>نعم، فقط إذا كان الاسترداد بسبب خطأ من جانبنا (مثل منتج تالف أو خاطئ).</p>
+            <h3>هل يمكن استرداد جزء من المبلغ فقط؟</h3>
+            <p>نعم، في حالات العيوب الجزئية أو الاستخدام المحدود، يتم حساب الاسترداد بناءً على القيمة المتبقية.</p>
             
-            <h3>ماذا لو رفضتم المنتج المُرجَع؟</h3>
-            <p>إذا لم يتوافق المنتج مع شروط الإرجاع، سنرسله مرة أخرى على نفقتكم، أو يمكنكم الاحتفاظ به.</p>
+            <h3>ماذا لو رفضتم المنتج المُرجع؟</h3>
+            <p>سنعيد المنتج على نفقتكم أو يمكنكم التبرع به للجمعيات الخيرية، مع إخطاركم مسبقاً.</p>
+            
+            <h3>هل يؤثر الاسترداد على سمعة العميل؟</h3>
+            <p>لا، نحن نقدر تعاونكم ونستخدم الاستردادات لتحسين خدماتنا.</p>
         </div>
 
-        <div class="contact-info">
-            <h3>للاستفسارات حول الاسترداد</h3>
-            <p><strong>العنوان:</strong> دقي، الجيزة، مصر | معادي، القاهرة، مصر</p>
-            <p><strong>الهاتف:</strong> +20 2 12345678 | +20 10 98765432</p>
-            <p><strong>البريد الإلكتروني:</strong> refunds@noujstore.com</p>
-            <p><strong>ساعات العمل:</strong> من الأحد إلى الخميس، 9 صباحاً - 6 مساءً</p>
-            <a href="contact.html" style="color: #27ae60; text-decoration: none; font-weight: bold;">تواصلوا معنا الآن</a>
+        <div class="policy-section">
+            <h2>10. الاتصال والاستفسارات</h2>
+            <div class="contact-info">
+                <h3>قسم خدمة العملاء والاستردادات</h3>
+                <p><strong>المقر الرئيسي:</strong> دقي، الجيزة، مصر - مبنى رقم 123، الطابق الخامس</p>
+                <p><strong>المستودع الرئيسي:</strong> معادي، القاهرة، مصر - منطقة الصناعات الغذائية</p>
+                <p><strong>الهاتف:</strong> +20 2 1234 5678 (الخط الساخن)</p>
+                <p><strong>الهاتف المحمول:</strong> +20 10 9876 5432 (واتساب)</p>
+                <p><strong>البريد الإلكتروني:</strong> refunds@noujstore.com</p>
+                <p><strong>موقع الويب:</strong> www.noujstore.com</p>
+                <p><strong>ساعات العمل:</strong> الأحد - الخميس: 9:00 ص - 6:00 م | الجمعة - السبت: 10:00 ص - 4:00 م</p>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <p>نحن في شركة NOUJ STORE نؤمن بأن الثقة المتبادلة هي أساس علاقتنا مع عملائنا. هذه السياسة مصممة لضمان حقوق الجميع مع الحفاظ على أعلى مستويات الجودة والخدمة.</p>
+            <p><strong>شركة NOUJ STORE للتجارة والتوزيع</strong></p>
+            <p>القاهرة، مصر - 2025</p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
+    <!-- Corporate Footer -->
+    <footer class="corporate-footer">
+        <h3>NOUJ STORE - الريادة في عالم المنتجات الغذائية</h3>
+        <p>جميع الحقوق محفوظة © 2025 - شركة NOUJ STORE للتجارة والتوزيع</p>
         <nav class="nav-links">
             <a href="privacy-policy.html">سياسة الخصوصية</a>
             <a href="return-policy.html">سياسة الإرجاع</a>
@@ -187,6 +322,7 @@
             <a href="shipping-policy.html">سياسة الشحن</a>
             <a href="terms-and-conditions.html">شروط الاستخدام</a>
             <a href="about.html">من نحن</a>
+            <a href="contact.html">اتصل بنا</a>
         </nav>
     </footer>
 </body>

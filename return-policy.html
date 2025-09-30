@@ -1,168 +1,427 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الإرجاع - NOUJ STORE</title>
-    <meta name="description" content="سياسة الإرجاع والاسترداد في متجر NOUJ STORE">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles.css">
-    <style>
+ <style>
         body {
             font-family: 'Cairo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .corporate-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .corporate-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .corporate-header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: -20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .policy-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f9f9f9;
+        .document-header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
         
-        .policy-section h2 {
-            color: #2c2c54;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .policy-section h3 {
-            color: #764ba2;
-            margin-top: 20px;
-        }
-        
-        .policy-section ul {
-            padding-right: 20px;
-        }
-        
-        .policy-section li {
+        .document-header h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
             margin-bottom: 10px;
         }
         
-        .header, .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .document-header .version {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid #ecf0f1;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .policy-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .policy-section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .policy-section ul {
+            padding-right: 25px;
+        }
+        
+        .policy-section li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .policy-section li::marker {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .shipping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .shipping-table th, .shipping-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        .shipping-table th {
+            background: #f2f2f2;
+            color: #333;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border-left: 5px solid #17a2b8;
             padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .corporate-footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
+            margin-top: 40px;
+        }
+        
+        .corporate-footer h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
         }
         
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
-            color: #ffeaa7;
+            color: #ecf0f1;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         
         .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
             color: white;
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <h1>NOUJ STORE</h1>
-        <nav class="nav-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="products.html">المنتجات</a>
-            <a href="cart.html">السلة</a>
-            <a href="contact.html">اتصل بنا</a>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container">
-        <h1 style="text-align: center; color: #2c2c54; margin-bottom: 30px;">سياسة الإرجاع والاسترداد</h1>
         
-        <div class="policy-section">
-            <h2>نظرة عامة</h2>
-            <p>في NOUJ STORE، نحن ملتزمون برضاكم. نقدم سياسة إرجاع مرنة لضمان تجربتكم الشرائية الأفضل. يمكنكم إرجاع معظم المنتجات خلال <strong>24 ساعة فقط  </strong> من تاريخ الاستلام، بشرط أن تكون المنتجات في حالتها الأصلية وغير مستخدمة.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>الشروط المؤهلة للإرجاع</h2>
-            <ul>
-                <li>يجب أن تكون المنتجات غير مفتوحة وفي حالتها الأصلية مع التغليف الأصلي.</li>
-                <li>يجب أن تكون المنتجات غير مستخدمة وغير تالفة.</li>
-                <li>يجب أن تكون الفاتورة أو إيصال الشراء متوفراً.</li>
-                <li>المنتجات القابلة للتلف مثل الشاي يجب أن تكون غير مفتوحة تماماً.</li>
-                <li>لا يتم قبول الإرجاع للمنتجات المخصصة أو المطبوعة حسب الطلب.</li>
-            </ul>
-        </div>
-
-        <div class="policy-section">
-            <h2>عملية الإرجاع</h2>
-            <ol>
-                <li><strong>التواصل معنا:</strong> اتصلوا بنا عبر البريد الإلكتروني أو الهاتف للحصول على رقم الإرجاع (RMA).</li>
-                <li><strong>إعداد الشحنة:</strong> أعدوا المنتجات في التغليف الأصلي مع جميع الإكسسوارات.</li>
-                <li><strong>شحن المنتج:</strong> أرسلوا المنتجات إلى عنواننا المحدد (سنقدم التفاصيل بعد الموافقة).</li>
-                <li><strong>الفحص والاسترداد:</strong> بعد استلام المنتجات وفحصها، سنقوم بالاسترداد خلال 5-7 أيام عمل.</li>
-            </ol>
-            <p><strong>ملاحظة:</strong> تتحملون تكاليف الشحن للإرجاع، ما عدا إذا كان الإرجاع بسبب خطأ من جانبنا.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>الاستثناءات</h2>
-            <ul>
-                <li>المنتجات المفتوحة أو المستخدمة.</li>
-                <li>المنتجات التالفة بسبب سوء الاستخدام أو عدم الالتزام بتعليمات التخزين.</li>
-                <li>المنتجات الشخصية أو المخصصة.</li>
-                <li>المنتجات المنخفضة القيمة (أقل من 50 جنيه).</li>
-            </ul>
-        </div>
-
-        <div class="policy-section">
-            <h2>الاسترداد</h2>
-            <p>سيتم استرداد المبلغ الكامل (باستثناء تكاليف الشحن الأصلية) إلى الطريقة الأصلية للدفع. قد يستغرق الاسترداد 3-10 أيام عمل حسب البنك.</p>
-            <p>إذا تم الدفع عند الاستلام، سيتم استرداد المبلغ نقداً أو عبر تحويل بنكي.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2>الأسئلة الشائعة</h2>
-            <h3>ماذا لو كان المنتج تالفاً عند الاستلام؟</h3>
-            <p>يرجى التواصل معنا فوراً خلال 48 ساعة من الاستلام لترتيب استبدال أو استرداد كامل.</p>
+        .contact-info {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+        
+        .signature-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .signature-section p {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .corporate-header h1 {
+                font-size: 2em;
+            }
             
-            <h3>هل يمكن إرجاع المنتجات القابلة للتلف؟</h3>
-            <p>نعم، إذا كانت غير مفتوحة وفي حالتها الأصلية. المنتجات المفتوحة غير مؤهلة للإرجاع لأسباب صحية.</p>
+            .container {
+                margin: 0 10px;
+                padding: 20px 15px;
+            }
             
-            <h3>كيف أحصل على عنوان الإرجاع؟</h3>
-            <p>بعد الحصول على رقم الإرجاع، سنرسل لكم العنوان عبر البريد الإلكتروني.</p>
-        </div>
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+<div class="corporate-header">
+    <h1>NOUJ STORE</h1>
+    <div class="subtitle">الشركة الرائدة في مجال المنتجات الغذائية الفاخرة</div>
+</div>
 
-        <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e8f5e8; border-radius: 8px;">
-            <h3>لديكم أسئلة؟</h3>
-            <p>اتصلوا بنا على <strong>support@noujstore.com</strong> أو <strong>0123456789</strong></p>
-            <a href="contact.html" style="color: #27ae60; text-decoration: none; font-weight: bold;">تواصلوا معنا الآن</a>
+<div class="container">
+    <div class="document-header">
+        <h1>سياسة الإرجاع</h1>
+        <div class="version">الإصدار 2.1 - آخر تحديث: 15 يناير 2025</div>
+    </div>
+
+    <div class="policy-section">
+        <h2>المقدمة والالتزامات</h2>
+        <p>في شركة NOUJ STORE للتجارة والتوزيع، نؤمن بأن رضا عملائنا هو أولويتنا القصوى. هذه السياسة توضح إجراءات وحالات إرجاع المنتجات المشتراة من منصتنا الإلكترونية. نحن ملتزمون بتقديم خدمة عادلة وشفافة في جميع عمليات الإرجاع والاسترداد.</p>
+
+        <div class="highlight-box">
+            <strong>الالتزام بالجودة:</strong> جميع عمليات الإرجاع تتم وفقاً لأعلى معايير الجودة والنزاهة، مع ضمان حقوق جميع الأطراف المعنية.
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
-        <nav class="nav-links">
-            <a href="privacy-policy.html">سياسة الخصوصية</a>
-            <a href="terms.html">شروط الاستخدام</a>
-            <a href="return-policy.html">سياسة الإرجاع</a>
-        </nav>
-    </footer>
+    <div class="policy-section">
+        <h2>1. تعريفات ومصطلحات</h2>
+        <ul>
+            <li><strong>الإرجاع:</strong> إعادة المنتج إلى الشركة للاسترداد أو الاستبدال</li>
+            <li><strong>الاسترداد:</strong> إرجاع المبلغ المدفوع للعميل عبر نفس طريقة الدفع الأصلية</li>
+            <li><strong>الاستبدال:</strong> تبديل المنتج بمنتج آخر من نفس الفئة أو قيمة أعلى</li>
+            <li><strong>فترة السماح:</strong> المدة الزمنية المسموح بها لطلب الإرجاع</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>2. شروط الإرجاع الأساسية</h2>
+        <h3>فترة الإرجاع:</h3>
+        <ul>
+            <li>14 يوماً من تاريخ استلام المنتج للمنتجات غير المفتوحة</li>
+            <li>48 ساعة من تاريخ استلام المنتج للمنتجات التالفة أو الخاطئة</li>
+            <li>لا يتم قبول طلبات الإرجاع بعد انتهاء فترة السماح</li>
+        </ul>
+
+        <h3>حالة المنتج:</h3>
+        <ul>
+            <li>يجب أن يكون المنتج في حالته الأصلية مع التغليف الكامل</li>
+            <li>غير مفتوح أو مستخدم بأي شكل من الأشكال</li>
+            <li>غير تالف أو متضرر من قبل العميل</li>
+            <li>مرفق به الفاتورة الأصلية ورقم الطلب</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>3. حالات الإرجاع المقبولة</h2>
+        <h3>الإرجاع الكامل:</h3>
+        <ul>
+            <li>المنتجات التالفة أو المتضررة أثناء النقل</li>
+            <li>المنتجات الخاطئة المرسلة (غير مطابقة للطلب)</li>
+            <li>المنتجات المرسلة بدون طلب العميل</li>
+            <li>المنتجات منتهية الصلاحية عند الاستلام</li>
+        </ul>
+
+        <h3>الإرجاع الجزئي:</h3>
+        <ul>
+            <li>المنتجات ذات العيوب المصنعية (بعد الفحص الفني)</li>
+            <li>المنتجات غير المطابقة للمواصفات المعلنة</li>
+            <li>المنتجات ذات الجودة غير المقبولة</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>4. عملية طلب الإرجاع</h2>
+        <h3>الخطوات المطلوبة:</h3>
+        <ol>
+            <li><strong>تقديم الطلب:</strong> التواصل مع خدمة العملاء عبر البريد الإلكتروني أو الهاتف</li>
+            <li><strong>تقديم المستندات:</strong> إرسال صور المنتج والفاتورة ورقم الطلب</li>
+            <li><strong>الحصول على الموافقة:</strong> انتظار رد الفريق خلال 24 ساعة عمل</li>
+            <li><strong>إرسال المنتج:</strong> شحن المنتج إلى عنوان الإرجاع المحدد</li>
+            <li><strong>فحص المنتج:</strong> فحص المنتج في المستودع خلال 3-5 أيام عمل</li>
+            <li><strong>المعالجة النهائية:</strong> الاسترداد أو الاستبدال حسب اختيار العميل</li>
+        </ol>
+
+        <h3>المستندات المطلوبة:</h3>
+        <ul>
+            <li>صور واضحة للمنتج التالف أو المعيب</li>
+            <li>نسخة من الفاتورة الأصلية</li>
+            <li>رقم الطلب وتاريخ الشراء</li>
+            <li>وصف مفصل للمشكلة</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>5. خيارات ما بعد الإرجاع</h2>
+        <h3>الاسترداد المالي:</h3>
+        <ul>
+            <li>إرجاع المبلغ كاملاً إلى طريقة الدفع الأصلية</li>
+            <li>معالجة خلال 5-10 أيام عمل حسب البنك</li>
+            <li>قد يظهر كإيداع منفصل في كشف الحساب</li>
+        </ul>
+
+        <h3>الاستبدال:</h3>
+        <ul>
+            <li>استبدال بمنتج آخر من نفس الفئة</li>
+            <li>إمكانية الترقية إلى منتج أغلى مع دفع الفرق</li>
+            <li>إمكانية الاستبدال بقسائم شراء</li>
+        </ul>
+
+        <h3>الإصلاح:</h3>
+        <ul>
+            <li>إصلاح المنتج في حالات العيوب المصنعية</li>
+            <li>تقديم منتج بديل مؤقتاً أثناء الإصلاح</li>
+            <li>ضمان عدم تكرار المشكلة</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>6. الاستثناءات والقيود</h2>
+        <h3>المنتجات غير القابلة للإرجاع:</h3>
+        <ul>
+            <li>المنتجات الغذائية المفتوحة أو المستهلكة جزئياً</li>
+            <li>المنتجات التالفة بسبب سوء الاستخدام أو التخزين</li>
+            <li>المنتجات المخصصة أو المطبوعة حسب الطلب</li>
+            <li>المنتجات ذات القيمة المنخفضة (أقل من 100 جنيه مصري)</li>
+            <li>المنتجات المستخدمة في العروض والتخفيضات الخاصة</li>
+        </ul>
+
+        <h3>القيود الزمنية:</h3>
+        <ul>
+            <li>انتهاء فترة السماح المحددة</li>
+            <li>الطلبات التي تم إلغاؤها بعد الشحن</li>
+            <li>المنتجات المفقودة أثناء الإرجاع</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>7. تكاليف الإرجاع</h2>
+        <h3>تكاليف يتحملها العميل:</h3>
+        <ul>
+            <li>تكاليف الشحن الأصلية (غير مستردة)</li>
+            <li>تكاليف إرجاع المنتج في الحالات العادية</li>
+            <li>أي رسوم بنكية إضافية</li>
+        </ul>
+
+        <h3>تكاليف تتحملها الشركة:</h3>
+        <ul>
+            <li>جميع التكاليف في حالات الخطأ من جانبنا</li>
+            <li>تكاليف الشحن للمنتجات التالفة أو الخاطئة</li>
+            <li>تكاليف الفحص والإصلاح</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>8. إجراءات الشكاوى والنزاعات</h2>
+        <ul>
+            <li>يمكن تقديم شكوى عبر خدمة العملاء خلال 30 يوماً من رفض الإرجاع</li>
+            <li>فريق متخصص لمراجعة الحالات المعقدة</li>
+            <li>إمكانية التصعيد إلى مدير الخدمة</li>
+            <li>الالتزام بحل النزاعات ودياً قبل اللجوء للجهات الرسمية</li>
+            <li>الامتثال لقانون حماية المستهلك المصري</li>
+        </ul>
+    </div>
+
+    <div class="policy-section">
+        <h2>9. الأسئلة الشائعة</h2>
+        <h3>كيف أعرف إذا كان المنتج مؤهلاً للإرجاع؟</h3>
+        <p>تحقق من أن المنتج في حالته الأصلية ولم يمضِ على استلامه أكثر من 14 يوماً. إذا كان تالفاً أو خاطئاً، فهو مؤهل تلقائياً.</p>
+
+        <h3>هل يمكنني استبدال المنتج بدلاً من الاسترداد؟</h3>
+        <p>نعم، يمكنك اختيار الاستبدال بمنتج آخر من نفس الفئة أو قيمة أعلى. سنقوم بمعالجة الاستبدال خلال 3-5 أيام عمل.</p>
+
+        <h3>ماذا لو رفضتم المنتج المُرجع؟</h3>
+        <p>سنعيد المنتج على نفقتكم أو يمكنكم التبرع به للجمعيات الخيرية، مع إخطاركم مسبقاً.</p>
+
+        <h3>هل يؤثر الإرجاع على سمعة العميل؟</h3>
+        <p>لا، نحن نقدر تعاونكم ونستخدم الإرجاعات لتحسين خدماتنا ومنتجاتنا.</p>
+    </div>
+
+    <div class="policy-section">
+        <h2>10. الاتصال والاستفسارات</h2>
+        <div class="contact-info">
+            <h3>قسم خدمة العملاء والإرجاعات</h3>
+            <p><strong>المقر الرئيسي:</strong> دقي، الجيزة، مصر - مبنى رقم 123، الطابق الخامس</p>
+            <p><strong>المستودع الرئيسي:</strong> معادي، القاهرة، مصر - منطقة الصناعات الغذائية</p>
+            <p><strong>الهاتف:</strong> +20 2 1234 5678 (الخط الساخن)</p>
+            <p><strong>الهاتف المحمول:</strong> +20 10 9876 5432 (واتساب)</p>
+            <p><strong>البريد الإلكتروني:</strong> returns@noujstore.com</p>
+            <p><strong>موقع الويب:</strong> www.noujstore.com</p>
+            <p><strong>ساعات العمل:</strong> الأحد - الخميس: 9:00 ص - 6:00 م | الجمعة - السبت: 10:00 ص - 4:00 م</p>
+        </div>
+    </div>
+
+    <div class="signature-section">
+        <p>نحن في شركة NOUJ STORE نؤمن بأن الثقة المتبادلة هي أساس علاقتنا مع عملائنا. هذه السياسة مصممة لضمان حقوق الجميع مع الحفاظ على أعلى مستويات الجودة والخدمة.</p>
+        <p><strong>شركة NOUJ STORE للتجارة والتوزيع</strong></p>
+        <p>القاهرة، مصر - 2025</p>
+    </div>
+</div>
+
+<!-- Corporate Footer -->
+<footer class="corporate-footer">
+    <h3>NOUJ STORE - الريادة في عالم المنتجات الغذائية</h3>
+    <p>جميع الحقوق محفوظة © 2025 - شركة NOUJ STORE للتجارة والتوزيع</p>
+    <nav class="nav-links">
+        <a href="privacy-policy.html">سياسة الخصوصية</a>
+        <a href="return-policy.html">سياسة الإرجاع</a>
+        <a href="refund-policy.html">سياسة الاسترداد</a>
+        <a href="shipping-policy.html">سياسة الشحن</a>
+        <a href="terms-and-conditions.html">شروط الاستخدام</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+</footer>
 </body>
 </html>

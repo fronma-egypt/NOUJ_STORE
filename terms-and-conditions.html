@@ -4,95 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شروط الاستخدام - NOUJ STORE</title>
-    <meta name="description" content="شروط وأحكام استخدام متجر NOUJ STORE">
+    <meta name="description" content="شروط الاستخدام الرسمية لشركة NOUJ STORE - القواعد والأحكام التي تحكم استخدام منصتنا الإلكترونية">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Cairo', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .corporate-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .corporate-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .corporate-header .subtitle {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.9;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: -20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .terms-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f9f9f9;
+        .document-header {
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
         
-        .terms-section h2 {
-            color: #2c2c54;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .terms-section h3 {
-            color: #764ba2;
-            margin-top: 20px;
-        }
-        
-        .terms-section ul {
-            padding-right: 20px;
-        }
-        
-        .terms-section li {
+        .document-header h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
             margin-bottom: 10px;
         }
         
-        .header, .footer {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .document-header .version {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            border: 1px solid #ecf0f1;
+            border-radius: 10px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .policy-section:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .policy-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .policy-section h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .policy-section ul {
+            padding-right: 25px;
+        }
+        
+        .policy-section li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        .policy-section li::marker {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1ecf1 100%);
+            border-left: 5px solid #17a2b8;
             padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .corporate-footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 20px;
             text-align: center;
+            margin-top: 40px;
+        }
+        
+        .corporate-footer h3 {
+            margin-bottom: 20px;
+            font-size: 1.3em;
         }
         
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
-            color: #ffeaa7;
+            color: #ecf0f1;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
         }
         
         .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
             color: white;
         }
         
         .contact-info {
-            background: #e8f5e8;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
             text-align: center;
+            color: white;
         }
         
         .contact-info h3 {
-            color: #27ae60;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+        
+        .signature-section {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .signature-section p {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .corporate-header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                margin: 0 10px;
+                padding: 20px 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links a {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Corporate Header -->
+    <header class="corporate-header">
         <h1>NOUJ STORE</h1>
+        <div class="subtitle">الشركة الرائدة في مجال المنتجات الغذائية الفاخرة</div>
         <nav class="nav-links">
             <a href="index.html">الرئيسية</a>
             <a href="products.html">المنتجات</a>
@@ -103,91 +225,245 @@
 
     <!-- Main Content -->
     <div class="container">
-        <h1 style="text-align: center; color: #2c2c54; margin-bottom: 30px;">شروط وأحكام الاستخدام</h1>
+        <div class="document-header">
+            <h1>شروط الاستخدام</h1>
+            <div class="version">الإصدار 2.1 - آخر تحديث: 15 يناير 2025</div>
+        </div>
         
-        <div class="terms-section">
-            <h2>مقدمة</h2>
-            <p>مرحباً بكم في NOUJ STORE. هذه الشروط تحكم استخدام موقعنا الإلكتروني وخدماتنا. باستخدام الموقع، توافقون على هذه الشروط. إذا لم توافقوا، يرجى عدم استخدام الموقع.</p>
-            <p>آخر تحديث: 1 يناير 2025</p>
-        </div>
-
-        <div class="terms-section">
-            <h2>1. الحسابات والتسجيل</h2>
-            <ul>
-                <li>يجب أن تكونوا فوق 18 عاماً لإنشاء حساب.</li>
-                <li>أنتم مسؤولون عن معلومات حسابكم وكلمة المرور.</li>
-                <li>نحتفظ بحق تعطيل الحسابات في حالة انتهاك الشروط.</li>
-                <li>يجب تقديم معلومات دقيقة وحديثة.</li>
-            </ul>
-        </div>
-
-        <div class="terms-section">
-            <h2>2. الطلبات والدفع</h2>
-            <ul>
-                <li>جميع الأسعار بالجنيه المصري (EGP).</li>
-                <li>الطلبات غير قابلة للإلغاء بعد الدفع، ما عدا وفقاً لسياسة الإرجاع.</li>
-                <li>نقبل الدفع عبر البطاقات الائتمانية، الدفع عند الاستلام، والتحويل البنكي.</li>
-                <li>الأسعار قد تتغير دون إشعار مسبق.</li>
-                <li>الضرائب والرسوم الجمركية مسؤوليتكم.</li>
-            </ul>
-        </div>
-
-        <div class="terms-section">
-            <h2>3. الشحن والتوصيل</h2>
-            <ul>
-                <li>نحن نستخدم شركات شحن موثوقة في مصر.</li>
-                <li>وقت التوصيل: 1-5 أيام عمل داخل القاهرة والإسكندرية، أطول للمناطق الأخرى.</li>
-                <li>تكاليف الشحن محسوبة بناءً على المسافة والوزن.</li>
-                <li>لا نتحمل مسؤولية التأخير بسبب الظروف الخارجية.</li>
-                <li>يجب التحقق من الطلب عند الاستلام.</li>
-            </ul>
-        </div>
-
-        <div class="terms-section">
-            <h2>4. الملكية الفكرية</h2>
-            <p>جميع المحتويات (الصور، النصوص، الشعارات) ملكية NOUJ STORE أو مزوديها. محظور استخدامها دون إذن كتابي.</p>
-        </div>
-
-        <div class="terms-section">
-            <h2>5. المسؤولية</h2>
-            <ul>
-                <li>نحن نضمن جودة المنتجات، لكن لا نتحمل مسؤولية الاستخدام الخاطئ.</li>
-                <li>المنتجات الغذائية يجب تخزينها وفقاً للتعليمات.</li>
-                <li>لا نتحمل مسؤولية الأضرار غير المباشرة.</li>
-                <li>القانون المصري يحكم هذه الشروط.</li>
-            </ul>
-        </div>
-
-        <div class="terms-section">
-            <h2>6. التعديلات</h2>
-            <p>نحتفظ بحق تعديل هذه الشروط في أي وقت. الاستمرار في الاستخدام يعني الموافقة على التعديلات.</p>
-        </div>
-
-        <div class="terms-section">
-            <h2>7. الاتصال بنا</h2>
-            <div class="contact-info">
-                <h3>معلومات الاتصال</h3>
-                <p><strong>العنوان:</strong> دقي، الجيزة، مصر | معادي، القاهرة، مصر</p>
-                <p><strong>الهاتف:</strong> +20 2 12345678 | +20 10 98765432</p>
-                <p><strong>البريد الإلكتروني:</strong> support@noujstore.com</p>
-                <p><strong>ساعات العمل:</strong> من الأحد إلى الخميس، 9 صباحاً - 6 مساءً</p>
+        <div class="policy-section">
+            <h2>المقدمة والقبول</h2>
+            <p>مرحباً بكم في منصة NOUJ STORE الإلكترونية. هذه الشروط والأحكام تحكم استخدامكم لموقعنا الإلكتروني www.noujstore.com وجميع الخدمات المرتبطة به. باستخدامكم لمنصتنا، فإنكم توافقون على الالتزام بهذه الشروط والأحكام بالكامل.</p>
+            
+            <div class="highlight-box">
+                <strong>الالتزام بالقوانين:</strong> جميع المستخدمين ملزمون بالامتثال لقوانين جمهورية مصر العربية وقوانين حماية المستهلك المعمول بها.
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 30px;">
-            <p>شكراً لثقتكم في NOUJ STORE. نحن هنا لخدمتكم!</p>
+        <div class="policy-section">
+            <h2>1. تعريفات ومصطلحات</h2>
+            <ul>
+                <li><strong>الشركة/نحن:</strong> شركة NOUJ STORE للتجارة والتوزيع</li>
+                <li><strong>العميل/المستخدم:</strong> أي شخص يستخدم منصتنا الإلكترونية</li>
+                <li><strong>المنصة:</strong> الموقع الإلكتروني وجميع التطبيقات المرتبطة</li>
+                <li><strong>المنتجات:</strong> البضائع والخدمات المعروضة للبيع</li>
+                <li><strong>الطلب:</strong> طلب شراء المنتجات من خلال المنصة</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>2. شروط الاستخدام الأساسية</h2>
+            <h3>الأهلية للاستخدام:</h3>
+            <ul>
+                <li>يجب أن يكون المستخدم فوق سن 18 عاماً أو تحت إشراف ولي أمر</li>
+                <li>يجب تقديم معلومات صحيحة ودقيقة عند التسجيل</li>
+                <li>المستخدم مسؤول عن الحفاظ على سرية كلمة المرور</li>
+                <li>يحظر استخدام المنصة لأغراض غير قانونية</li>
+            </ul>
+            
+            <h3>قيود الاستخدام:</h3>
+            <ul>
+                <li>لا يجوز نسخ أو توزيع محتوى المنصة دون إذن كتابي</li>
+                <li>يحظر استخدام برامج ضارة أو محاولة اختراق النظام</li>
+                <li>لا يجوز إرسال محتوى مسيء أو مخالف للآداب العامة</li>
+                <li>يحظر التلاعب بالأسعار أو استخدام المنصة لأغراض تجارية غير مصرح بها</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>3. عملية الشراء والدفع</h2>
+            <h3>إنشاء الطلب:</h3>
+            <ul>
+                <li>إضافة المنتجات المرغوبة إلى سلة التسوق</li>
+                <li>مراجعة تفاصيل الطلب والتأكد من صحتها</li>
+                <li>اختيار طريقة الدفع والشحن المناسبة</li>
+                <li>تأكيد الطلب والحصول على رقم الطلب</li>
+            </ul>
+            
+            <h3>طرق الدفع:</h3>
+            <ul>
+                <li>البطاقات الائتمانية والخصم (Visa, Mastercard)</li>
+                <li>محافظ إلكترونية (Vodafone Cash, Etisalat Cash, Orange Money)</li>
+                <li>الدفع عند الاستلام (COD) في المناطق المحددة</li>
+                <li>التحويل البنكي للطلبات الكبيرة</li>
+            </ul>
+            
+            <h3>تأكيد الدفع:</h3>
+            <ul>
+                <li>يتم تأكيد الدفع خلال 24 ساعة من إجرائه</li>
+                <li>يتم إرسال إشعار تأكيد عبر البريد الإلكتروني</li>
+                <li>في حالة فشل الدفع، يتم إلغاء الطلب تلقائياً</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>4. الأسعار والضرائب</h2>
+            <ul>
+                <li>جميع الأسعار بالجنيه المصري وتشمل ضريبة القيمة المضافة (VAT)</li>
+                <li>الأسعار قابلة للتغيير دون إشعار مسبق</li>
+                <li>السعر المعتمد هو السعر المعروض وقت تأكيد الطلب</li>
+                <li>قد تختلف الأسعار حسب الكميات والعروض الترويجية</li>
+                <li>تكاليف الشحن محسوبة بشكل منفصل حسب المنطقة والوزن</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>5. الشحن والتوصيل</h2>
+            <h3>مناطق التوصيل:</h3>
+            <ul>
+                <li>نشحن إلى جميع أنحاء جمهورية مصر العربية</li>
+                <li>أوقات التوصيل تختلف حسب المنطقة والظروف</li>
+                <li>قد تكون هناك مناطق نائية تحتاج وقتاً إضافياً</li>
+            </ul>
+            
+            <h3>مسؤولية التوصيل:</h3>
+            <ul>
+                <li>نحن مسؤولون عن سلامة الشحنة حتى تسليمها</li>
+                <li>يجب فحص الشحنة عند الاستلام والإبلاغ عن أي تلف</li>
+                <li>في حالة عدم وجود أحد في العنوان، يتم إعادة الجدولة</li>
+                <li>رسوم إعادة التوصيل تتحملها الشركة للمرة الأولى</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>6. الإرجاع والاسترداد</h2>
+            <h3>شروط الإرجاع:</h3>
+            <ul>
+                <li>المنتجات غير المفتوحة قابلة للإرجاع خلال 14 يوماً</li>
+                <li>المنتجات التالفة أو الخاطئة قابلة للإرجاع خلال 48 ساعة</li>
+                <li>يجب تقديم فاتورة الشراء الأصلية</li>
+                <li>المنتجات الغذائية المفتوحة غير قابلة للإرجاع لأسباب صحية</li>
+            </ul>
+            
+            <h3>عملية الاسترداد:</h3>
+            <ul>
+                <li>الاسترداد إلى نفس طريقة الدفع الأصلية</li>
+                <li>مدة المعالجة 5-10 أيام عمل حسب البنك</li>
+                <li>قد يظهر الاسترداد كإيداع منفصل في كشف الحساب</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>7. الملكية الفكرية</h2>
+            <ul>
+                <li>جميع المحتويات والتصاميم محمية بحقوق الطبع والنشر</li>
+                <li>العلامات التجارية والشعارات ملك لشركة NOUJ STORE</li>
+                <li>يحظر نسخ أو استخدام المحتوى دون إذن كتابي</li>
+                <li>الصور والوصف المنتجات محمية قانونياً</li>
+                <li>أي انتهاك لحقوق الملكية الفكرية يعرض للمساءلة القانونية</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>8. الخصوصية وحماية البيانات</h2>
+            <ul>
+                <li>نحن نحترم خصوصية بياناتكم الشخصية</li>
+                <li>البيانات تُستخدم فقط لأغراض الخدمة والتحسين</li>
+                <li>نحن ملتزمون بحماية البيانات من الوصول غير المصرح به</li>
+                <li>للمزيد من التفاصيل، راجعوا سياسة الخصوصية الخاصة بنا</li>
+                <li>يحق لكم طلب حذف بياناتكم في أي وقت</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>9. إخلاء المسؤولية</h2>
+            <h3>حدود المسؤولية:</h3>
+            <ul>
+                <li>لا نتحمل مسؤولية الأضرار غير المباشرة أو التبعية</li>
+                <li>المسؤولية محدودة بقيمة المنتج المشترى</li>
+                <li>لا نضمن خلو المنصة من الأخطاء الفنية</li>
+                <li>قد تختلف جودة المنتجات حسب الشاشة والإضاءة</li>
+            </ul>
+            
+            <h3>القوة القاهرة:</h3>
+            <ul>
+                <li>لا نتحمل مسؤولية التأخير بسبب الكوارث الطبيعية</li>
+                <li>تشمل الإضرابات، الحروب، والظروف الطارئة</li>
+                <li>في حالة القوة القاهرة، قد يتم إلغاء الطلبات</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>10. التعويضات والمسؤوليات</h2>
+            <ul>
+                <li>المستخدم مسؤول عن أي ضرر يسببه للشركة</li>
+                <li>يشمل ذلك الاستخدام غير القانوني أو المخالف</li>
+                <li>التعويض يشمل الأضرار المباشرة وغير المباشرة</li>
+                <li>الشركة تحتفظ بحق مقاضاة المخالفين</li>
+                <li>قد يتم تعليق أو إغلاق الحسابات المخالفة</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>11. إنهاء الخدمة</h2>
+            <ul>
+                <li>يحق للشركة إنهاء أو تعليق الخدمات في أي وقت دون إشعار مسبق</li>
+                <li>في حالة انتهاك الشروط، قد يتم إغلاق الحساب نهائياً</li>
+                <li>العميل مسؤول عن حفظ بياناته قبل إنهاء الخدمة</li>
+                <li>الأحكام المتعلقة بالمسؤولية والتعويضات تبقى سارية بعد الإنهاء</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>12. التعديلات على الشروط</h2>
+            <ul>
+                <li>يحق للشركة تعديل هذه الشروط في أي وقت</li>
+                <li>التعديلات تنشر على الموقع مع تاريخ التحديث</li>
+                <li>استمرار الاستخدام يعني الموافقة على التعديلات</li>
+                <li>ننصح بمراجعة الشروط دورياً</li>
+                <li>التعديلات الجوهرية تُعلن عنها مسبقاً</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>13. القانون المطبق وحل النزاعات</h2>
+            <h3>القانون المصري:</h3>
+            <ul>
+                <li>هذه الشروط تخضع لقوانين جمهورية مصر العربية</li>
+                <li>النزاعات تحل ودياً أولاً ثم قضائياً</li>
+                <li>المحاكم المصرية هي الجهة المختصة</li>
+            </ul>
+            
+            <h3>حل النزاعات:</h3>
+            <ul>
+                <li>نفضل حل النزاعات بالطرق الودية</li>
+                <li>يمكن اللجوء لجهات حماية المستهلك</li>
+                <li>النزاعات التجارية تحل من خلال التحكيم</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2>14. الاتصال والاستفسارات</h2>
+            <div class="contact-info">
+                <h3>معلومات الاتصال الرسمية</h3>
+                <p><strong>المقر الرئيسي:</strong> دقي، الجيزة، مصر - مبنى رقم 123، الطابق الخامس</p>
+                <p><strong>المستودع الرئيسي:</strong> معادي، القاهرة، مصر - منطقة الصناعات الغذائية</p>
+                <p><strong>الهاتف:</strong> +20 2 1234 5678 (الخط الساخن)</p>
+                <p><strong>الهاتف المحمول:</strong> +20 10 9876 5432 (واتساب)</p>
+                <p><strong>البريد الإلكتروني:</strong> legal@noujstore.com</p>
+                <p><strong>موقع الويب:</strong> www.noujstore.com</p>
+                <p><strong>ساعات العمل:</strong> الأحد - الخميس: 9:00 ص - 6:00 م | الجمعة - السبت: 10:00 ص - 4:00 م</p>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <p>تم إعداد هذه الشروط والأحكام بعناية فائقة لضمان حقوق جميع الأطراف. نحن ملتزمون بتقديم أفضل الخدمات ونقدر ثقتكم بنا.</p>
+            <p><strong>شركة NOUJ STORE للتجارة والتوزيع</strong></p>
+            <p>القاهرة، مصر - 2025</p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>جميع الحقوق محفوظة © 2025 - NOUJ STORE</p>
+    <!-- Corporate Footer -->
+    <footer class="corporate-footer">
+        <h3>NOUJ STORE - الريادة في عالم المنتجات الغذائية</h3>
+        <p>جميع الحقوق محفوظة © 2025 - شركة NOUJ STORE للتجارة والتوزيع</p>
         <nav class="nav-links">
             <a href="privacy-policy.html">سياسة الخصوصية</a>
             <a href="return-policy.html">سياسة الإرجاع</a>
             <a href="refund-policy.html">سياسة الاسترداد</a>
             <a href="shipping-policy.html">سياسة الشحن</a>
             <a href="terms-and-conditions.html">شروط الاستخدام</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">اتصل بنا</a>
         </nav>
     </footer>
 </body>
